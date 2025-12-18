@@ -10,6 +10,25 @@ CREATE TABLE users (
 
 
 INSERT INTO users (username, password) VALUES
-('admin', '$2y$10$wH6kqJ5y7QhK6R8j7Yk3cO9R1QZxk7zY0J7yY5zQ9XkFQmP8cC'),
-('john',  '$2y$10$wH6kqJ5y7QhK6R8j7Yk3cO9R1QZxk7zY0J7yY5zQ9XkFQmP8cC'),
-('sarah', '$2y$10$wH6kqJ5y7QhK6R8j7Yk3cO9R1QZxk7zY0J7yY5zQ9XkFQmP8cC');
+('lol', '12345678'),
+('dan',  'pupupupu'),
+('sarah123', 'qwerty123');
+
+
+CREATE USER 
+'login_system'@'localhost' 
+IDENTIFIED  BY 'Login_system123$';
+
+GRANT USAGE ON *.* TO 'login_system'@'localhost';
+
+ALTER USER 'login_system'@'localhost' 
+REQUIRE NONE 
+WITH MAX_QUERIES_PER_HOUR 0 
+MAX_CONNECTIONS_PER_HOUR 0 
+MAX_UPDATES_PER_HOUR 0 
+MAX_USER_CONNECTIONS 0;
+
+GRANT ALL PRIVILEGES ON satori.* 
+TO 'login_system'@'localhost';
+
+FLUSH PRIVILEGES;

@@ -1,0 +1,261 @@
+{
+  "formas": [
+    {
+      "id": "forma-1",
+      "tipo": "entity",
+      "left": "269.879px",
+      "top": "23.5597px",
+      "width": "",
+      "height": "",
+      "entityName": "USER",
+      "properties": [
+        {
+          "id": "prop-1",
+          "name": "id"
+        },
+        {
+          "id": "prop-7",
+          "name": "email(opcional)"
+        },
+        {
+          "id": "prop-8",
+          "name": "phone(opcional)"
+        },
+        {
+          "id": "prop-9",
+          "name": "username"
+        },
+        {
+          "id": "prop-10",
+          "name": "password"
+        }
+      ]
+    },
+    {
+      "id": "forma-2",
+      "tipo": "entity",
+      "left": "640.103px",
+      "top": "38.5556px",
+      "width": "",
+      "height": "",
+      "entityName": "POST",
+      "properties": [
+        {
+          "id": "prop-2",
+          "name": "id"
+        },
+        {
+          "id": "prop-16",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-17",
+          "name": "id_user"
+        },
+        {
+          "id": "prop-26",
+          "name": "created_at"
+        },
+        {
+          "id": "prop-44",
+          "name": "caption"
+        },
+        {
+          "id": "prop-45",
+          "name": "image_url"
+        }
+      ]
+    },
+    {
+      "id": "forma-3",
+      "tipo": "entity",
+      "left": "1003.03px",
+      "top": "47.4889px",
+      "width": "",
+      "height": "",
+      "entityName": "MENU",
+      "properties": [
+        {
+          "id": "prop-3",
+          "name": "id"
+        },
+        {
+          "id": "prop-11",
+          "name": "plannes_date"
+        },
+        {
+          "id": "prop-12",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-27",
+          "name": "id_user"
+        },
+        {
+          "id": "prop-46",
+          "name": "meal_type"
+        }
+      ]
+    },
+    {
+      "id": "forma-5",
+      "tipo": "entity",
+      "left": "816.024px",
+      "top": "43.6361px",
+      "width": "",
+      "height": "",
+      "entityName": "REVIEWS",
+      "properties": [
+        {
+          "id": "prop-5",
+          "name": "id"
+        },
+        {
+          "id": "prop-20",
+          "name": "likes"
+        },
+        {
+          "id": "prop-21",
+          "name": "comment"
+        },
+        {
+          "id": "prop-22",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-25",
+          "name": "id_user"
+        },
+        {
+          "id": "prop-42",
+          "name": "rating"
+        }
+      ]
+    },
+    {
+      "id": "forma-6",
+      "tipo": "entity",
+      "left": "668.461px",
+      "top": "417.267px",
+      "width": "",
+      "height": "",
+      "entityName": "HISTORY",
+      "properties": [
+        {
+          "id": "prop-6",
+          "name": "id"
+        },
+        {
+          "id": "prop-18",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-19",
+          "name": "date_time"
+        },
+        {
+          "id": "prop-23",
+          "name": "id_user"
+        },
+        {
+          "id": "prop-28",
+          "name": "action_type"
+        }
+      ]
+    },
+    {
+      "id": "forma-7",
+      "tipo": "entity",
+      "left": "1186.09px",
+      "top": "136.756px",
+      "width": "",
+      "height": "",
+      "entityName": "INGREDIENT",
+      "properties": [
+        {
+          "id": "prop-29",
+          "name": "id"
+        },
+        {
+          "id": "prop-30",
+          "name": "name"
+        },
+        {
+          "id": "prop-41",
+          "name": "calories"
+        },
+        {
+          "id": "prop-47",
+          "name": "type"
+        }
+      ]
+    },
+    {
+      "id": "forma-8",
+      "tipo": "entity",
+      "left": "1108.9px",
+      "top": "406.051px",
+      "width": "",
+      "height": "",
+      "entityName": "RECIPE_INGREDIENT",
+      "properties": [
+        {
+          "id": "prop-31",
+          "name": "id_recipe "
+        },
+        {
+          "id": "prop-32",
+          "name": "id_ingredient "
+        },
+        {
+          "id": "prop-33",
+          "name": "amount"
+        },
+        {
+          "id": "prop-34",
+          "name": "unit"
+        },
+        {
+          "id": "prop-40",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "id": "forma-9",
+      "tipo": "entity",
+      "left": "461.15px",
+      "top": "24.0161px",
+      "width": "",
+      "height": "",
+      "entityName": "RECIPE",
+      "properties": [
+        {
+          "id": "prop-35",
+          "name": "id"
+        },
+        {
+          "id": "prop-36",
+          "name": "id_user "
+        },
+        {
+          "id": "prop-37",
+          "name": "title "
+        },
+        {
+          "id": "prop-38",
+          "name": "prep_time"
+        },
+        {
+          "id": "prop-39",
+          "name": "description "
+        },
+        {
+          "id": "prop-43",
+          "name": "serving"
+        }
+      ]
+    }
+  ],
+  "flechas": []
+}

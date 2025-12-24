@@ -1,0 +1,241 @@
+{
+  "formas": [
+    {
+      "id": "forma-1",
+      "tipo": "entity",
+      "left": "269.879px",
+      "top": "23.5597px",
+      "width": "",
+      "height": "",
+      "entityName": "USER",
+      "properties": [
+        {
+          "id": "prop-1",
+          "name": "id"
+        },
+        {
+          "id": "prop-7",
+          "name": "email(opcional)"
+        },
+        {
+          "id": "prop-8",
+          "name": "phone(opcional)"
+        },
+        {
+          "id": "prop-9",
+          "name": "username"
+        },
+        {
+          "id": "prop-10",
+          "name": "password"
+        }
+      ]
+    },
+    {
+      "id": "forma-2",
+      "tipo": "entity",
+      "left": "1206.78px",
+      "top": "36.3482px",
+      "width": "",
+      "height": "",
+      "entityName": "POST",
+      "properties": [
+        {
+          "id": "prop-2",
+          "name": "id"
+        },
+        {
+          "id": "prop-16",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-17",
+          "name": "id_user"
+        },
+        {
+          "id": "prop-26",
+          "name": "created_at"
+        }
+      ]
+    },
+    {
+      "id": "forma-3",
+      "tipo": "entity",
+      "left": "474.139px",
+      "top": "258.605px",
+      "width": "",
+      "height": "",
+      "entityName": "MENU",
+      "properties": [
+        {
+          "id": "prop-3",
+          "name": "id"
+        },
+        {
+          "id": "prop-11",
+          "name": "date_time"
+        },
+        {
+          "id": "prop-12",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-27",
+          "name": "id_user"
+        }
+      ]
+    },
+    {
+      "id": "forma-5",
+      "tipo": "entity",
+      "left": "272.709px",
+      "top": "251.432px",
+      "width": "",
+      "height": "",
+      "entityName": "REVIEWS",
+      "properties": [
+        {
+          "id": "prop-5",
+          "name": "id"
+        },
+        {
+          "id": "prop-20",
+          "name": "likes"
+        },
+        {
+          "id": "prop-21",
+          "name": "comment"
+        },
+        {
+          "id": "prop-22",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-25",
+          "name": "id_user"
+        },
+        {
+          "id": "prop-42",
+          "name": "rating"
+        }
+      ]
+    },
+    {
+      "id": "forma-6",
+      "tipo": "entity",
+      "left": "1027.35px",
+      "top": "40.6107px",
+      "width": "",
+      "height": "",
+      "entityName": "HISTORY",
+      "properties": [
+        {
+          "id": "prop-6",
+          "name": "id"
+        },
+        {
+          "id": "prop-18",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-19",
+          "name": "date_time"
+        },
+        {
+          "id": "prop-23",
+          "name": "id_user"
+        },
+        {
+          "id": "prop-28",
+          "name": "action_type"
+        }
+      ]
+    },
+    {
+      "id": "forma-7",
+      "tipo": "entity",
+      "left": "847.213px",
+      "top": "43.425px",
+      "width": "",
+      "height": "",
+      "entityName": "INGREDIENT",
+      "properties": [
+        {
+          "id": "prop-29",
+          "name": "id"
+        },
+        {
+          "id": "prop-30",
+          "name": "name"
+        },
+        {
+          "id": "prop-41",
+          "name": "calories"
+        }
+      ]
+    },
+    {
+      "id": "forma-8",
+      "tipo": "entity",
+      "left": "661.134px",
+      "top": "37.1714px",
+      "width": "",
+      "height": "",
+      "entityName": "RECIPE_INGREDIENT",
+      "properties": [
+        {
+          "id": "prop-31",
+          "name": "id_recipe "
+        },
+        {
+          "id": "prop-32",
+          "name": "id_ingredient "
+        },
+        {
+          "id": "prop-33",
+          "name": "quantity"
+        },
+        {
+          "id": "prop-34",
+          "name": "unit"
+        },
+        {
+          "id": "prop-40",
+          "name": "atributo"
+        }
+      ]
+    },
+    {
+      "id": "forma-9",
+      "tipo": "entity",
+      "left": "461.15px",
+      "top": "24.0161px",
+      "width": "",
+      "height": "",
+      "entityName": "RECIPE",
+      "properties": [
+        {
+          "id": "prop-35",
+          "name": "id"
+        },
+        {
+          "id": "prop-36",
+          "name": "id_user "
+        },
+        {
+          "id": "prop-37",
+          "name": "title "
+        },
+        {
+          "id": "prop-38",
+          "name": "time_cooking"
+        },
+        {
+          "id": "prop-39",
+          "name": "description "
+        }
+      ]
+    }
+  ],
+  "flechas": []
+}

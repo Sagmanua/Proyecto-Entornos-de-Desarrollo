@@ -1,0 +1,400 @@
+{
+  "formas": [
+    {
+      "id": "forma-1",
+      "tipo": "entity",
+      "left": "269.879px",
+      "top": "23.5597px",
+      "width": "",
+      "height": "",
+      "entityName": "USER",
+      "properties": [
+        {
+          "id": "prop-1",
+          "name": "id"
+        },
+        {
+          "id": "prop-7",
+          "name": "email(opcional)"
+        },
+        {
+          "id": "prop-8",
+          "name": "phone(opcional)"
+        },
+        {
+          "id": "prop-9",
+          "name": "username"
+        },
+        {
+          "id": "prop-10",
+          "name": "password"
+        }
+      ]
+    },
+    {
+      "id": "forma-2",
+      "tipo": "entity",
+      "left": "259.775px",
+      "top": "292.338px",
+      "width": "",
+      "height": "",
+      "entityName": "POST",
+      "properties": [
+        {
+          "id": "prop-2",
+          "name": "id"
+        },
+        {
+          "id": "prop-16",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-17",
+          "name": "id_user"
+        },
+        {
+          "id": "prop-26",
+          "name": "created_at"
+        }
+      ]
+    },
+    {
+      "id": "forma-3",
+      "tipo": "entity",
+      "left": "434.138px",
+      "top": "293.6px",
+      "width": "",
+      "height": "",
+      "entityName": "MENU",
+      "properties": [
+        {
+          "id": "prop-3",
+          "name": "id"
+        },
+        {
+          "id": "prop-11",
+          "name": "date_time"
+        },
+        {
+          "id": "prop-12",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-27",
+          "name": "id_user"
+        }
+      ]
+    },
+    {
+      "id": "forma-5",
+      "tipo": "entity",
+      "left": "782.7px",
+      "top": "279.412px",
+      "width": "",
+      "height": "",
+      "entityName": "REVIEWS",
+      "properties": [
+        {
+          "id": "prop-5",
+          "name": "id"
+        },
+        {
+          "id": "prop-20",
+          "name": "likes"
+        },
+        {
+          "id": "prop-21",
+          "name": "comment"
+        },
+        {
+          "id": "prop-22",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-25",
+          "name": "id_user"
+        },
+        {
+          "id": "prop-42",
+          "name": "rating"
+        }
+      ]
+    },
+    {
+      "id": "forma-6",
+      "tipo": "entity",
+      "left": "604.338px",
+      "top": "287.587px",
+      "width": "",
+      "height": "",
+      "entityName": "HISTORY",
+      "properties": [
+        {
+          "id": "prop-6",
+          "name": "id"
+        },
+        {
+          "id": "prop-18",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-19",
+          "name": "date_time"
+        },
+        {
+          "id": "prop-23",
+          "name": "id_user"
+        },
+        {
+          "id": "prop-28",
+          "name": "action_type"
+        }
+      ]
+    },
+    {
+      "id": "forma-7",
+      "tipo": "entity",
+      "left": "847.213px",
+      "top": "43.425px",
+      "width": "",
+      "height": "",
+      "entityName": "INGREDIENT",
+      "properties": [
+        {
+          "id": "prop-29",
+          "name": "id"
+        },
+        {
+          "id": "prop-30",
+          "name": "name"
+        },
+        {
+          "id": "prop-41",
+          "name": "calories"
+        }
+      ]
+    },
+    {
+      "id": "forma-8",
+      "tipo": "entity",
+      "left": "661.134px",
+      "top": "37.1714px",
+      "width": "",
+      "height": "",
+      "entityName": "RECIPE_INGREDIENT",
+      "properties": [
+        {
+          "id": "prop-31",
+          "name": "id_recipe "
+        },
+        {
+          "id": "prop-32",
+          "name": "id_ingredient "
+        },
+        {
+          "id": "prop-33",
+          "name": "quantity"
+        },
+        {
+          "id": "prop-34",
+          "name": "unit"
+        },
+        {
+          "id": "prop-40",
+          "name": "atributo"
+        }
+      ]
+    },
+    {
+      "id": "forma-9",
+      "tipo": "entity",
+      "left": "461.15px",
+      "top": "24.0161px",
+      "width": "",
+      "height": "",
+      "entityName": "RECIPE",
+      "properties": [
+        {
+          "id": "prop-35",
+          "name": "id"
+        },
+        {
+          "id": "prop-36",
+          "name": "id_user "
+        },
+        {
+          "id": "prop-37",
+          "name": "title "
+        },
+        {
+          "id": "prop-38",
+          "name": "time_cooking"
+        },
+        {
+          "id": "prop-39",
+          "name": "description "
+        },
+        {
+          "id": "prop-43",
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "flechas": [
+    {
+      "desde": {
+        "shapeId": "forma-1",
+        "propId": "prop-1",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-9",
+        "propId": "prop-36",
+        "side": "left"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-8",
+        "propId": "prop-31",
+        "side": "left"
+      },
+      "hasta": {
+        "shapeId": "forma-9",
+        "propId": "prop-35",
+        "side": "right"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-8",
+        "propId": "prop-32",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-7",
+        "propId": "prop-29",
+        "side": "left"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-9",
+        "propId": "prop-35",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-6",
+        "propId": "prop-18",
+        "side": "left"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-1",
+        "propId": "prop-1",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-6",
+        "propId": "prop-23",
+        "side": "left"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-1",
+        "propId": "prop-1",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-5",
+        "propId": "prop-25",
+        "side": "right"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-9",
+        "propId": "prop-35",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-5",
+        "propId": "prop-22",
+        "side": "right"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-1",
+        "propId": "prop-1",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-3",
+        "propId": "prop-27",
+        "side": "left"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-9",
+        "propId": "prop-35",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-3",
+        "propId": "prop-12",
+        "side": "right"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-9",
+        "propId": "prop-35",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-2",
+        "propId": "prop-16",
+        "side": "left"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-1",
+        "propId": "prop-1",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-2",
+        "propId": "prop-17",
+        "side": "left"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    }
+  ]
+}

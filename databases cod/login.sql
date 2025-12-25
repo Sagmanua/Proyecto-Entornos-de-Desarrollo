@@ -9,11 +9,6 @@ CREATE TABLE users (
 );
 
 
-INSERT INTO users (username, password) VALUES
-('lol', '12345678'),
-('dan',  'pupupupu'),
-('sarah123', 'qwerty123');
-
 
 CREATE USER 
 'login_system'@'localhost' 
@@ -28,7 +23,7 @@ MAX_CONNECTIONS_PER_HOUR 0
 MAX_UPDATES_PER_HOUR 0 
 MAX_USER_CONNECTIONS 0;
 
-GRANT ALL PRIVILEGES ON satori.* 
+GRANT ALL PRIVILEGES ON login_system.* 
 TO 'login_system'@'localhost';
 
 FLUSH PRIVILEGES;

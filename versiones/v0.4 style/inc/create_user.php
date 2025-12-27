@@ -1,15 +1,26 @@
 <?php
-require_once __DIR__ . '/../actions/head.php'; // To get the $conn variable
+require_once __DIR__ . '/../actions/head.php';
 
-if (isset($_POST['login'])) { // Matches the button name in your register.php
-    $username = $_POST['username'];
+if (isset($_POST['login'])) {
+    $username = trim($_POST['username']); // Remove accidental whitespace
     $password = $_POST['password'];
+    $errors = [];
 
-    // Basic validation: Min 8 characters + 1 number
-    if (strlen($password) < 8 || !preg_match("/[0-9]/", $password)) {
-        echo "<p style='color:red;'>Password must be 8+ chars and contain a number.</p>";
-    } else {
-        // Hash the password for safety
+    // 1. Username Validation (5-20 characters)
+    if (strlen($username) < 5 || strlen($username) > 20) {
+        $errors[] = "Username must be between 5 and 20 characters.";
+    }
+
+    // 2. Password Validation (8-16 characters + number)
+    if (strlen($password) < 8 || strlen($password) > 16) {
+        $errors[] = "Password must be between 8 and 16 characters.";
+    }
+    if (!preg_match("/[0-9]/", $password)) {
+        $errors[] = "Password must contain at least one number.";
+    }
+
+    // 3. Execution
+    if (empty($errors)) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         $stmt = $conn->prepare("INSERT INTO USER (username, password) VALUES (?, ?)");
@@ -19,6 +30,11 @@ if (isset($_POST['login'])) { // Matches the button name in your register.php
             echo "<p style='color:green;'>Registration successful! <a href='login.php'>Login here</a></p>";
         } else {
             echo "<p style='color:red;'>Error: Username might already be taken.</p>";
+        }
+    } else {
+        // Display all boundary errors
+        foreach ($errors as $error) {
+            echo "<p style='color:red;'>$error</p>";
         }
     }
 }

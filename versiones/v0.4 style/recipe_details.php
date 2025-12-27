@@ -11,9 +11,9 @@ $stmt->execute();
 $recipe = $stmt->get_result()->fetch_assoc();
 
 if ($recipe) {
-    echo "<h1>" . $recipe['title'] . "</h1>";
-
-    echo "<h3>Ingredients:</h3><ul>";
+    echo "<h1 class='recipe-detail-header'>" . $recipe['title'] . "</h1>";
+    echo "<h3>Ingredients:</h3>";
+    echo "<ul>";
     
     $sql_ing = "SELECT i.name, ri.amount, ri.unit 
                 FROM ingredient i 
@@ -29,9 +29,8 @@ if ($recipe) {
         echo "<li>" . $row['amount'] . " " . $row['unit'] . " " . $row['name'] . "</li>";
     }
     echo "</ul>";
-
     echo "<h3>Instructions:</h3>";
-    echo "<p>" . nl2br($recipe['description']) . "</p>";
+    echo "<div class='instructions-box'>" . nl2br($recipe['description']) . "</div>";
 
 } else {
     echo "Recipe not found.";

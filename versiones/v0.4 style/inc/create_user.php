@@ -29,7 +29,7 @@ if (isset($_POST['login'])) {
         if ($stmt->execute()) {
             echo "<p style='color:green;'>Registration successful! <a href='login.php'>Login here</a></p>";
         } else {
-            echo "<p style='color:red;'>Error: Username might already be taken.</p>";
+            echo "<p style='color:red;'>Errrrror: Username might already be taken.</p>";
         }
     } else {
         // Display all boundary errors

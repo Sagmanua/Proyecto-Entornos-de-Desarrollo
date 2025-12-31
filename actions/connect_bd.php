@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
-$user = "login_system";
+$user = "admin_recipe_app";
 $pass = "Login_system123$";
-$db   = "login_system";
+$db   = "recipe_app";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 

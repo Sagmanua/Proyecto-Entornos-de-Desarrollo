@@ -7,7 +7,6 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        // We put the dynamic content INSIDE the loop so $row is defined
         echo '<div class="recipe-card">'; 
         
         echo "<h3>" . $row['title'] . "</h3>";

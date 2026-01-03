@@ -8,6 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
+// 1. Handle form submission to save to the MENU table
 if (isset($_POST['save_menu'])) {
     $date = $_POST['planned_date'];
     $recipe_id = $_POST['id_recipe'];
@@ -62,6 +63,7 @@ if (isset($_POST['save_menu'])) {
 
     <div class="planner-grid">
         <?php
+        // Fetch last 7 days of plans
         $sql = "SELECT m.plannes_date, m.meal_type, r.title, r.id as rid 
                 FROM MENU m 
                 JOIN RECIPE r ON m.id_recipe = r.id 

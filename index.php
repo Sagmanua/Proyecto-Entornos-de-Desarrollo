@@ -7,13 +7,13 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo '<div class="recipe-card">'; 
-        
-        echo "<h3>" . $row['title'] . "</h3>";
-        
-        echo '<a href="recipe_details.php?id=' . $row['id'] . '">View Full Recipe</a>';
-        
-        echo '</div>';
+            echo '<div class="recipe-card">'; 
+            echo '<div class="image-wrapper">'; 
+            echo '<img src="' . $row['img'] . '" class="recipe-image">';
+            echo '</div>';
+            echo '<h3>' . $row['title'] . '</h3>';
+            echo '<a href="...">View Full Recipe</a>';
+echo '</div>';
     }
 } else {
     echo "The table is empty.";

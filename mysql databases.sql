@@ -17,6 +17,7 @@ CREATE TABLE RECIPE (
     title VARCHAR(100) NOT NULL,
     prep_time VARCHAR(50),
     description TEXT,
+    img VARCHAR(255),
     serving INT,
     FOREIGN KEY (id_user) REFERENCES USER(id) ON DELETE SET NULL
 );

@@ -32,11 +32,12 @@ $user_id = $_SESSION['user_id'];
         <h3 style="margin-bottom: 20px; color: #333;">My Upcoming Meals</h3>
         <div class="planner-grid">
             <?php
+            // Выбираем меню только для текущего пользователя на сегодня и будущие даты
             $sql = "SELECT m.plannes_date, m.meal_type, r.title, r.id as rid 
                     FROM MENU m 
                     JOIN RECIPE r ON m.id_recipe = r.id 
                     WHERE m.id_user = ? AND m.plannes_date >= CURDATE()
-                    ORDER BY m.plannes_date ASC LIMIT 3"; 
+                    ORDER BY m.plannes_date ASC LIMIT 3"; // Показываем только ближайшие 3 приема пищи
             
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("i", $user_id);

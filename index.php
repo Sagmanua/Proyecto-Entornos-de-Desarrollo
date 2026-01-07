@@ -12,7 +12,8 @@ if ($result->num_rows > 0) {
             echo '<img src="' . $row['img'] . '" class="recipe-image">';
             echo '</div>';
             echo '<h3>' . $row['title'] . '</h3>';
-            echo '<a href="...">View Full Recipe</a>';
+            echo '<a href="recipe_details.php?id=' . $row['id'] . '" class="btn">View Full Recipe</a>';
+
 echo '</div>';
     }
 } else {

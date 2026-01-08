@@ -1,0 +1,9 @@
+ID de Envío: env_695f7c3f4604d6.22240922
+
+Indica tu nombre: Bohdan
+Indica tus apellidos: Sydorenko
+Indica tu email: sidorenko.bohdan.05@gmail.com
+Indica el título de tu proyecto de final de evaluación: App de Recetas y Planificador de Comidas
+Describe tu proyecto: <div style="line-height: 19px;"><div style=""># 🥗 App de Recetas y Planificador de Comidas</div><br><div style="">Una aplicación web full-stack desarrollada en PHP diseñada para ayudar a los usuarios a descubrir recetas, gestionar perfiles y organizar sus hábitos alimenticios semanales a través de un planificador interactivo.</div><br><div style="">## 📝 Descripción del Proyecto</div><div style="">Este proyecto es una herramienta integral para la gestión de cocina. Permite a los usuarios registrados explorar una colección de recetas, ver detalles de preparación y agendar sus comidas diarias (desayuno, almuerzo, cena o snacks) en un calendario personalizado.</div><br><div style="">## ✨ Características Principales</div><div style="">* **Autenticación de Usuarios:** Sistema de registro y login seguro con manejo de sesiones.</div><div style="">* **Planificador Semanal:** Interfaz para añadir recetas a fechas específicas y tipos de comida.</div><div style="">* **Detalles de Receta:** Visualización de ingredientes con cantidades, unidades e instrucciones paso a paso.</div><div style="">* **Panel de Usuario:** Perfil personalizado que muestra las próximas comidas programadas.</div><div style="">* **Catálogo Dinámico:** Página principal que carga automáticamente las recetas disponibles desde la base de datos.</div></div>
+Indica la URL del GitHub del proyecto: https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo
+Si necesitas realizar cambios, contacta al administrador.

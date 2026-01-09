@@ -52,7 +52,6 @@ nav a {
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* This ensures the card doesn't grow wider than the grid column */
     min-width: 0; 
     width: 100%;
 }

@@ -63,7 +63,6 @@ if (isset($_POST['save_menu'])) {
 
     <div class="planner-grid">
         <?php
-        // Fetch last 7 days of plans
         $sql = "SELECT m.plannes_date, m.meal_type, r.title, r.id as rid 
                 FROM MENU m 
                 JOIN RECIPE r ON m.id_recipe = r.id 

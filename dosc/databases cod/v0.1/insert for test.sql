@@ -14,17 +14,28 @@ INSERT INTO USER (id, email, phone, username, password) VALUES
 (NULL, 'finn@fish.com', '555-3010', 'FinnishFish', '$2b$12$F1i2n3n4i5s6h7F8i9s0h1H2a3s4h5V6');
 
 -- 2. RECIPE (IDs 21-30)
-INSERT INTO RECIPE (id, id_user, title, prep_time, description, serving) VALUES 
-(NULL, 21, 'Sourdough Bread', '24 hours', 'Traditional fermented crusty bread.', 1),
-(NULL, 22, 'Greek Salad', '15 mins', 'Cucumber, olives, and feta cheese.', 2),
-(NULL, 23, 'Lentil Soup', '40 mins', 'Hearty spiced red lentil soup.', 4),
-(NULL, 24, 'Vegetable Stirfry', '10 mins', 'Zero-waste broccoli and carrot fry.', 2),
-(NULL, 25, 'Beef Wellington', '2 hours', 'Premium beef wrapped in pastry.', 4),
-(NULL, 26, 'Penne Arrabiata', '20 mins', 'Spicy tomato sauce pasta.', 2),
-(NULL, 27, 'Fried Chicken', '30 mins', 'Extra crispy buttermilk chicken.', 4),
-(NULL, 28, 'Keto Salad', '10 mins', 'High fat, low carb green salad.', 1),
-(NULL, 29, 'Apple Pie', '1.5 hours', 'Classic cinnamon apple filling.', 8),
-(NULL, 30, 'Fish Tacos', '25 mins', 'Cod tacos with lime slaw.', 3);
+INSERT INTO recipes (id_user, title, prep_time, description, serving, img) VALUES
+(10, 'Spaghetti Carbonara', '20 mins', 'Authentic Roman pasta with egg and guanciale.', 2, 'assets/carbonara.jpg'),
+(2, 'Chocolate Fondant', '15 mins', 'Molten lava cake with a gooey center.', 4, 'assets/fondant.jpg'),
+(4, 'Quinoa Buddha Bowl', '25 mins', 'Healthy bowl with roasted chickpeas and kale.', 1, 'assets/quinoa.jpg'),
+(3, 'Smoked BBQ Ribs', '4 hours', 'Slow-cooked ribs with a honey bourbon glaze.', 6, 'assets/ribs.jpg'),
+(7, 'Strawberry Macarons', '1 hour', 'Delicate French almond cookies with jam filling.', 12, 'assets/macarons.jpg'),
+(6, 'Pan-Seared Scallops', '10 mins', 'Scallops with lemon butter and pea puree.', 2, 'assets/scallops.jpg'),
+(8, 'Avocado Toast', '5 mins', 'Sourdough with mashed avocado and chili flakes.', 1, 'assets/avocado_toast.jpg'),
+(1, 'Chicken Tikka Masala', '45 mins', 'Creamy spiced tomato curry with tender chicken.', 4, 'assets/chicken_tikka.jpg'),
+(5, 'Classic Smash Burger', '15 mins', 'Crispy beef patties with melted cheddar.', 2, 'assets/burger.jpg'),
+(9, 'Green Smoothie', '5 mins', 'Spinach, banana, and almond milk blend.', 1, 'assets/smoothie.jpg'),
+(21, 'Sourdough Bread', '24 hours', 'Traditional fermented crusty bread.', 1, 'assets/sourdough.jpg'),
+(22, 'Greek Salad', '15 mins', 'Cucumber, olives, and feta cheese.', 2, 'assets/greek_salad.jpg'),
+(23, 'Lentil Soup', '40 mins', 'Hearty spiced red lentil soup.', 4, 'assets/lentil_soup.jpg'),
+(24, 'Vegetable Stirfry', '10 mins', 'Zero-waste broccoli and carrot fry.', 2, 'assets/stirfry.jpg'),
+(25, 'Beef Wellington', '2 hours', 'Premium beef wrapped in pastry.', 4, 'assets/beef_wellington.jpg'),
+(26, 'Penne Arrabiata', '20 mins', 'Spicy tomato sauce pasta.', 2, 'assets/arrabiata.jpg'),
+(27, 'Fried Chicken', '30 mins', 'Extra crispy buttermilk chicken.', 4, 'assets/fried_chicken.jpg'),
+(28, 'Keto Salad', '10 mins', 'High fat, low carb green salad.', 1, 'assets/keto_salad.jpg'),
+(29, 'Apple Pie', '1.5 hours', 'Classic cinnamon apple filling.', 8, 'assets/apple_pie.jpg'),
+(30, 'Fish Tacos', '25 mins', 'Cod tacos with lime slaw.', 3, 'assets/fish_tacos.jpg');
+
 
 -- 3. INGREDIENT (IDs 11-20)
 INSERT INTO INGREDIENT (id, name, calories, type) VALUES 
@@ -114,18 +125,7 @@ INSERT INTO USER (id, email, phone, username, password) VALUES
 (NULL, 'kara_k@kitchen.com', '555-1009', 'KaraKitchen', '$2b$12$K1a2r3a4K5i6t7c8h9e0n1Q2u3e4e5n6H7a8'),
 (NULL, 'leo_l@luxury.com', '555-1010', 'LeoLuxury', '$2b$12$L1e2o3L4u5x6u7r8y9C0h1e2f3H4a5s6h7P8');
 
--- 2. RECIPE (10 Recipes)
-INSERT INTO RECIPE (id, id_user, title, prep_time, description, serving) VALUES 
-(1, 10, 'Spaghetti Carbonara', '20 mins', 'Authentic Roman pasta with egg and guanciale.', 2),
-(2, 2, 'Chocolate Fondant', '15 mins', 'Molten lava cake with a gooey center.', 4),
-(3, 4, 'Quinoa Buddha Bowl', '25 mins', 'Healthy bowl with roasted chickpeas and kale.', 1),
-(4, 3, 'Smoked BBQ Ribs', '4 hours', 'Slow-cooked ribs with a honey bourbon glaze.', 6),
-(5, 7, 'Strawberry Macarons', '1 hour', 'Delicate French almond cookies with jam filling.', 12),
-(6, 6, 'Pan-Seared Scallops', '10 mins', 'Scallops with lemon butter and pea puree.', 2),
-(7, 8, 'Avocado Toast', '5 mins', 'Sourdough with mashed avocado and chili flakes.', 1),
-(8, 1, 'Chicken Tikka Masala', '45 mins', 'Creamy spiced tomato curry with tender chicken.', 4),
-(9, 5, 'Classic Smash Burger', '15 mins', 'Crispy beef patties with melted cheddar.', 2),
-(10, 9, 'Green Smoothie', '5 mins', 'Spinach, banana, and almond milk blend.', 1);
+
 
 -- 3. INGREDIENT (10 Ingredients)
 INSERT INTO INGREDIENT (id, name, calories, type) VALUES 
@@ -140,19 +140,6 @@ INSERT INTO INGREDIENT (id, name, calories, type) VALUES
 (9, 'Avocado', 160, 'Fruit'),
 (10, 'Chicken Breast', 165, 'Meat');
 
--- 4. POST (10 Posts)
-INSERT INTO POST (id_recipe, id_user, caption, image_url) VALUES 
-(1, 10, 'Dinner tonight in Rome!', 'http://cdn.com/post1.jpg'),
-(2, 2, 'Look at that melt...', 'http://cdn.com/post2.jpg'),
-(3, 4, 'Healthy vibes only.', 'http://cdn.com/post3.jpg'),
-(4, 3, 'Smoked for 4 hours!', 'http://cdn.com/post4.jpg'),
-(5, 7, 'Testing a new flavor.', 'http://cdn.com/post5.jpg'),
-(6, 6, 'Fine dining at home.', 'http://cdn.com/post6.jpg'),
-(7, 8, 'Quick breakfast.', 'http://cdn.com/post7.jpg'),
-(8, 1, 'Spicy and creamy.', 'http://cdn.com/post8.jpg'),
-(9, 5, 'Double patty today.', 'http://cdn.com/post9.jpg'),
-(10, 9, 'Starting the day right.', 'http://cdn.com/post10.jpg');
-
 -- 5. REVIEWS (10 Reviews)
 INSERT INTO REVIEWS (likes, comment, id_recipe, id_user, rating) VALUES 
 (12, 'Perfect texture!', 1, 2, 5),
@@ -166,18 +153,7 @@ INSERT INTO REVIEWS (likes, comment, id_recipe, id_user, rating) VALUES
 (7, 'Juicy!', 9, 8, 5),
 (4, 'Very refreshing.', 10, 7, 4);
 
--- 6. MENU (10 Planned Meals)
-INSERT INTO MENU (plannes_date, id_recipe, id_user, meal_type) VALUES 
-('2025-01-01', 1, 1, 'Dinner'),
-('2025-01-01', 10, 2, 'Breakfast'),
-('2025-01-02', 3, 4, 'Lunch'),
-('2025-01-02', 2, 7, 'Snack'),
-('2025-01-03', 4, 3, 'Dinner'),
-('2025-01-03', 7, 8, 'Breakfast'),
-('2025-01-04', 8, 5, 'Dinner'),
-('2025-01-04', 9, 6, 'Lunch'),
-('2025-01-05', 6, 10, 'Dinner'),
-('2025-01-05', 5, 9, 'Snack');
+
 
 -- 7. HISTORY (10 History Logs)
 INSERT INTO HISTORY (id_recipe, id_user, action_type) VALUES 
@@ -186,16 +162,159 @@ INSERT INTO HISTORY (id_recipe, id_user, action_type) VALUES
 (9, 8, 'Saved'), (10, 7, 'Cooked');
 
 -- 8. RECIPE_INGREDIENT (10 Links)
-INSERT INTO RECIPE_INGREDIENT (id_recipe, id_ingredient, amount, unit, atributo) VALUES 
-(1, 1, 200, 'g', 'Al dente'),
-(1, 2, 3, 'pcs', 'Whisked'),
-(2, 4, 100, 'g', 'Melted'),
-(3, 5, 1, 'cup', 'Cooked'),
-(4, 6, 1, 'kg', 'Marinated'),
-(5, 7, 2, 'cups', 'Sifted'),
-(6, 8, 6, 'pcs', 'Cleaned'),
-(7, 9, 1, 'pc', 'Ripe'),
-(8, 10, 500, 'g', 'Diced'),
-(10, 9, 0.5, 'pc', 'Sliced');
+INSERT INTO recipe_ingredient (id_recipe, id_ingredient, amount, unit, atributo) VALUES
+-- 1 Spaghetti Carbonara
+(1, 1, 200, 'g', NULL),
+(1, 2, 2, 'pcs', 'egg yolk'),
+(1, 3, 100, 'g', 'diced'),
+(1, 4, 50, 'g', 'grated'),
+
+-- 2 Chocolate Fondant
+(2, 5, 200, 'g', 'dark'),
+(2, 6, 100, 'g', 'unsalted'),
+(2, 7, 50, 'g', NULL),
+
+-- 3 Quinoa Buddha Bowl
+(3, 8, 150, 'g', 'cooked'),
+(3, 9, 100, 'g', 'roasted'),
+(3, 10, 50, 'g', 'fresh'),
+
+-- 4 Smoked BBQ Ribs
+(4, 11, 1.5, 'kg', NULL),
+(4, 12, 200, 'ml', 'honey bourbon'),
+
+-- 5 Strawberry Macarons
+(5, 13, 120, 'g', 'fine'),
+(5, 14, 100, 'g', 'powdered'),
+
+-- 6 Pan-Seared Scallops
+(6, 15, 300, 'g', NULL),
+(6, 16, 1, 'pcs', 'zest'),
+
+-- 7 Avocado Toast
+(7, 17, 2, 'slices', 'sourdough'),
+(7, 18, 1, 'pcs', 'mashed'),
+
+-- 8 Chicken Tikka Masala
+(8, 19, 500, 'g', 'diced'),
+(8, 20, 300, 'ml', 'spiced'),
+(8, 21, 150, 'g', 'greek'),
+
+-- 9 Classic Smash Burger
+(9, 22, 300, 'g', 'ground'),
+(9, 23, 4, 'slices', 'melted'),
+
+-- 10 Green Smoothie
+(10, 24, 50, 'g', 'fresh'),
+(10, 25, 1, 'pcs', 'ripe'),
+
+-- 11 Sourdough Bread
+(11, 7, 500, 'g', 'bread flour'),
+
+-- 12 Greek Salad
+(12, 29, 150, 'g', 'chopped'),
+(12, 28, 100, 'g', 'crumbled'),
+
+-- 13 Lentil Soup
+(13, 30, 250, 'g', 'red'),
+(13, 20, 500, 'ml', 'vegetable'),
+
+-- 14 Vegetable Stirfry
+(14, 10, 100, 'g', 'sliced'),
+(14, 29, 100, 'g', 'julienne'),
+
+-- 15 Beef Wellington
+(15, 22, 1, 'kg', 'beef tenderloin'),
+(15, 7, 500, 'g', 'puff pastry'),
+
+-- 16 Penne Arrabiata
+(16, 1, 200, 'g', 'penne'),
+(16, 20, 300, 'ml', 'spicy'),
+
+-- 17 Fried Chicken
+(17, 19, 1, 'kg', 'buttermilk marinated'),
+(17, 7, 200, 'g', 'coating'),
+
+-- 18 Keto Salad
+(18, 10, 80, 'g', 'leafy'),
+(18, 18, 1, 'pcs', 'sliced'),
+
+-- 19 Apple Pie
+(19, 7, 300, 'g', 'pastry'),
+(19, 14, 100, 'g', 'brown'),
+
+-- 20 Fish Tacos
+(20, 27, 400, 'g', 'cod'),
+(20, 26, 6, 'pcs', 'corn');
+
+INSERT INTO ingredientes (name, calories, type) VALUES
+('Spaghetti', 158, 'pasta'),
+('Egg', 155, 'protein'),
+('Guanciale', 655, 'meat'),
+('Parmesan Cheese', 431, 'dairy'),
+('Black Pepper', 251, 'spice'),
+
+('Dark Chocolate', 546, 'sweet'),
+('Butter', 717, 'dairy'),
+('Flour', 364, 'grain'),
+('Sugar', 387, 'sweet'),
+
+('Quinoa', 120, 'grain'),
+('Chickpeas', 164, 'legume'),
+('Kale', 49, 'vegetable'),
+('Olive Oil', 884, 'fat'),
+
+('Pork Ribs', 291, 'meat'),
+('BBQ Sauce', 172, 'sauce'),
+('Dry Rub Spices', 282, 'spice'),
+
+('Almond Flour', 571, 'nut'),
+('Strawberry Jam', 278, 'sweet'),
+
+('Scallops', 111, 'seafood'),
+('Lemon', 29, 'fruit'),
+
+('Bread', 265, 'grain'),
+('Avocado', 160, 'fruit'),
+('Chili Flakes', 282, 'spice'),
+
+('Chicken', 239, 'meat'),
+('Tomato Sauce', 29, 'vegetable'),
+('Yogurt', 59, 'dairy'),
+('Garam Masala', 349, 'spice'),
+
+('Ground Beef', 250, 'meat'),
+('Cheddar Cheese', 403, 'dairy'),
+('Burger Bun', 279, 'grain'),
+
+('Spinach', 23, 'vegetable'),
+('Banana', 89, 'fruit'),
+('Almond Milk', 13, 'dairy alternative'),
+
+('Salt', 0, 'seasoning'),
+('Sourdough Starter', 150, 'fermented'),
+
+('Cucumber', 16, 'vegetable'),
+('Feta Cheese', 264, 'dairy'),
+('Olives', 145, 'fat'),
+
+('Red Lentils', 116, 'legume'),
+('Onion', 40, 'vegetable'),
+('Cumin', 375, 'spice'),
+
+('Broccoli', 34, 'vegetable'),
+('Carrot', 41, 'vegetable'),
+('Soy Sauce', 53, 'sauce'),
+
+('Mushroom Duxelles', 60, 'vegetable'),
+
+('Nuts', 607, 'nut'),
+
+('Apple', 52, 'fruit'),
+('Cinnamon', 247, 'spice'),
+
+('Cod', 82, 'seafood'),
+('Tortilla', 218, 'grain'),
+('Lime', 30, 'fruit');
 
 SET FOREIGN_KEY_CHECKS = 1;

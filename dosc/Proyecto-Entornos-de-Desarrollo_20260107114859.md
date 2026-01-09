@@ -467,7 +467,7 @@ if (isset($_POST['save_menu'])) {
     $recipe_id = $_POST['id_recipe'];
     $type = $_POST['meal_type'];
     
-    $stmt = $conn->prepare("INSERT INTO MENU (plannes_date, id_recipe, id_user, meal_type) VALUES (?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO  (plannes_date, id_recipe, id_user, meal_type) VALUES (?, MENU?, ?, ?)");
     $stmt->bind_param("siis", $date, $recipe_id, $user_id, $type);
     $stmt->execute();
     echo "<p class='success-msg'>Meal added to your plan!</p>";

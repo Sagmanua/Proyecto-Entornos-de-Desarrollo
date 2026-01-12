@@ -168,23 +168,38 @@ ul {
 /* =========================================
    6. USER PROFILE
    ========================================= */
+/* Container as flex row */
 .profile-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+    flex-wrap: wrap; /* for mobile */
+    background-color: #f5f5f5;
 }
 
-.profile-card {
-    width: 100%;
+/* Left column */
+.profile-left {
+    flex: 1 1 300px; /* grow, shrink, base width */
     max-width: 400px;
-    text-align: center;
+}
+
+/* Right column */
+.profile-right {
+    flex: 2 1 400px; /* bigger column */
+    max-width: 800px;
+}
+
+/* Profile card */
+.profile-card {
     background: #fff;
     border-radius: 12px;
-    padding: 30px;
+    padding: 30px 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* Avatar circle */
 .avatar-circle {
     width: 70px;
     height: 70px;
@@ -199,26 +214,48 @@ ul {
     margin: 0 auto 15px;
 }
 
-.profile-info {
-    text-align: left;
-    background: #fdfdfd;
-    padding: 15px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-.info-group .info-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 5px;
-}
-
+/* Profile actions */
 .profile-actions {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.profile-actions a {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-secondary { background-color: #6c757d; color: #fff; }
+.btn-secondary:hover { background-color: #5a6268; }
+.btn-danger { background-color: #ff6b6b; color: #fff; }
+.btn-danger:hover { background-color: #e55b5b; }
+
+/* Planner grid (right column) */
+.planner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.recipe-card.day-column {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.recipe-card .badge {
+    background-color: #ff6b6b;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 6px;
 }
 
 /* =========================================

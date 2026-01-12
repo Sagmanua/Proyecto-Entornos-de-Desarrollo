@@ -47,7 +47,7 @@ if (isset($_POST['save_menu'])) {
                     <label>Select Recipe</label>
                     <select name="id_recipe" required style="width:100%; padding:12px; border-radius:6px; border:1px solid #ddd;">
                         <?php
-                        $recipes = $conn->query("SELECT id, title FROM RECIPE");
+                        $recipes = $conn->query("SELECT id, title FROM recipe");
                         while($r = $recipes->fetch_assoc()) {
                             echo "<option value='{$r['id']}'>".htmlspecialchars($r['title'])."</option>";
                         }
@@ -65,7 +65,7 @@ if (isset($_POST['save_menu'])) {
         <?php
         $sql = "SELECT m.plannes_date, m.meal_type, r.title, r.id as rid 
                 FROM MENU m 
-                JOIN RECIPE r ON m.id_recipe = r.id 
+                JOIN recipe r ON m.id_recipe = r.id 
                 WHERE m.id_user = ? 
                 ORDER BY m.plannes_date ASC";
         $stmt = $conn->prepare($sql);

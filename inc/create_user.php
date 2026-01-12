@@ -4,6 +4,8 @@ require_once __DIR__ . '/../actions/head.php';
 if (isset($_POST['login'])) {
     $username = trim($_POST['username']); // Remove accidental whitespace
     $password = $_POST['password'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
     $errors = [];
 
     // 1. Username Validation (5-20 characters)
@@ -23,8 +25,18 @@ if (isset($_POST['login'])) {
     if (empty($errors)) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        $stmt = $conn->prepare("INSERT INTO USER (username, password) VALUES (?, ?)");
-        $stmt->bind_param("ss", $username, $hashed_password);
+        $stmt = $conn->prepare(
+    "INSERT INTO `USER` (username, password, email, phone) VALUES (?, ?, ?, ?)"
+            );
+
+            $stmt->bind_param(
+                "ssss",
+                $username,
+                $hashed_password,
+                $email,
+                $phone
+            );
+
 
         if ($stmt->execute()) {
             echo "<p style='color:green;'>Registration successful! <a href='login.php'>Login here</a></p>";

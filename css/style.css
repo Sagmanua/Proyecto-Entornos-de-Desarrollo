@@ -223,3 +223,80 @@ ul {
 
 .btn-secondary { background: #eee; color: #333; }
 .btn-danger { background: #ff6b6b; color: white; }
+
+/* CRUD TABLE STYLING */
+.crud-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin: 30px auto;
+}
+
+/* Table Header */
+.crud-table th {
+    background: #ff6b6b;
+    color: #fff;
+    text-align: left;
+    padding: 14px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Table Cells */
+.crud-table td {
+    padding: 14px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+    color: #333;
+    vertical-align: middle;
+}
+
+/* Zebra Striping */
+.crud-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Hover Effect */
+.crud-table tr:hover {
+    background-color: #fff1f1;
+}
+
+/* Action Buttons */
+.crud-table .actions {
+    display: flex;
+    gap: 8px;
+}
+
+.crud-table a {
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+/* Edit Button */
+.btn-edit {
+    background: #eee;
+    color: #333;
+}
+
+.btn-edit:hover {
+    background: #ddd;
+}
+
+/* Delete Button */
+.btn-delete {
+    background: #ff6b6b;
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background: #ee5253;
+}
+
+

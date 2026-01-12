@@ -2,7 +2,7 @@
 
 
 <div class="recipe-grid"> <?php 
-$sql = "SELECT * FROM RECIPE;";
+$sql = "SELECT * FROM recipe;";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

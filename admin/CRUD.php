@@ -1,7 +1,9 @@
+<link rel="stylesheet" href="../css/style.css">
+
 <?php
 require_once __DIR__ . '/../actions/connect_bd.php';
 
-$table = $_REQUEST['table_name'] ?? 'user';
+$table = $_REQUEST['table_name'] ?? 'USER';
 $edit_id = $_GET['edit'] ?? null;
 $row_to_edit = $edit_id ? $conn->query("SELECT * FROM $table WHERE id=$edit_id")->fetch_assoc() : null;
 
@@ -24,14 +26,22 @@ if (isset($_POST['save'])) {
 
 //  Delete Logic
 if (isset($_GET['delete'])) {
-    $conn->query("DELETE FROM $table WHERE id=" . $_GET['delete']);
+    $id = (int)$_GET['delete'];
+
+    // Delete child records first
+    $conn->query("DELETE FROM recipe_ingredient WHERE id_ingredient = $id");
+
+    // Then delete parent record
+    $conn->query("DELETE FROM ingredient WHERE id = $id");
+
     header("Location: ?table_name=$table");
 }
+
 ?>
 
 <form method="get">
     <select name="table_name" onchange="this.form.submit()">
-        <option value="user" <?= $table=='user'?'selected':'' ?>>Users</option>
+        <option value="USER" <?= $table=='USER'?'selected':'' ?>>Users</option>
         <option value="ingredient" <?= $table=='ingredient'?'selected':'' ?>>Ingredients</option>
     </select>
 </form>
@@ -56,16 +66,14 @@ if (isset($_GET['delete'])) {
 
 <hr>
 
-<table>
-    <?php
-    $data = $conn->query("SELECT * FROM $table");
-    while($row = $data->fetch_assoc()): ?>
-        <tr>
-            <?php foreach($row as $v) echo "<td>$v</td>"; ?>
-            <td>
-                <a href="?table_name=<?= $table ?>&edit=<?= $row['id'] ?>">Edit</a>
-                <a href="?table_name=<?= $table ?>&delete=<?= $row['id'] ?>" onclick="return confirm('Delete?')">Del</a>
-            </td>
-        </tr>
+<table class="crud-table">
+    <?php $data = $conn->query("SELECT * FROM $table"); while($row = $data->fetch_assoc()): ?>
+    <tr>
+        <?php foreach($row as $v) echo "<td>$v</td>"; ?>
+        <td class="actions">
+            <a class="btn-edit" href="?table_name=<?= $table ?>&edit=<?= $row['id'] ?>">Edit</a>
+            <a class="btn-delete" href="?table_name=<?= $table ?>&delete=<?= $row['id'] ?>" onclick="return confirm('Delete?')">Del</a>
+        </td>
+    </tr>
     <?php endwhile; ?>
 </table>

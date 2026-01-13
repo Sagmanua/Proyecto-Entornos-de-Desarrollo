@@ -57,6 +57,15 @@ CREATE TABLE recipe_ingredientes (
     -- Unique constraint ensures you don't add the same ingredient to a recipe twice
     UNIQUE KEY unique_recipe_ingredient (id_recipe, id_ingredient)
 );
+-- 8. RECIPErecipe_step (Many-to-Many Bridge Table)
+
+CREATE TABLE recipe_steps (
+         id INT AUTO_INCREMENT PRIMARY KEY,
+         recipe_id INT,                  -- Foreign key linking to the recipe table
+         step_number INT,                -- Step number (1, 2, 3, etc.)
+         step_description TEXT,          -- Description of the step
+         FOREIGN KEY (recipe_id) REFERENCES recipes (id) ON DELETE CASCADE
+     );
 
 
 ALTER TABLE recipe_ingredientes 

@@ -5,6 +5,12 @@
 
 
 # 2.-Desarrollo técnico correcto y preciso
+## images of data bases 
+![Flowchart](https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo/blob/main/dosc/prepare_for_examen/images/diagramas/recipe_app.png)
+![Flowchart](https://raw.githubusercontent.com/Sagmanua/Proyecto-Entornos-de-Desarrollo/main/dosc/prepare_for_examen/images/diagramas/diagrama.svg)
+
+
+
 
 
 

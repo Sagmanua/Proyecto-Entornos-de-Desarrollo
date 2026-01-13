@@ -390,7 +390,7 @@ GRANT ALL PRIVILEGES ON recipe_app.* TO 'admin_recipe_app'@'localhost';
 FLUSH PRIVILEGES;
 ``` 
 ## Ceate_View.sql
-[Where i used this code](https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo/blob/main/planner.php#66-69)
+[Where `user_meal_plans` is used](https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo/blob/main/planner.php#L66-L69)
 
 ```
 CREATE VIEW user_meal_plans AS

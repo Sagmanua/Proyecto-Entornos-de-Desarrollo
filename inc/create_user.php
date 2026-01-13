@@ -26,7 +26,7 @@ if (isset($_POST['login'])) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         $stmt = $conn->prepare(
-    "INSERT INTO `USER` (username, password, email, phone) VALUES (?, ?, ?, ?)"
+    "INSERT INTO `users` (username, password, email, phone) VALUES (?, ?, ?, ?)"
             );
 
             $stmt->bind_param(

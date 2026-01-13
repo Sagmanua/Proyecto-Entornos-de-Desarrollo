@@ -10,7 +10,6 @@ $user_id = $_SESSION['user_id'];
 ?>
 
 <div class="profile-container">
-    <!-- Left Column: Profile Card -->
     <div class="profile-left">
         <div class="profile-card">
             <div class="profile-header">
@@ -47,16 +46,16 @@ $user_id = $_SESSION['user_id'];
         </div>
     </div>
 
-    <!-- Right Column: Upcoming Meals -->
     <div class="profile-right">
         <h3>My Upcoming Meals</h3>
         <div class="planner-grid">
             <?php
-            $sql = "SELECT m.plannes_date, m.meal_type, r.title, r.id as rid 
-                    FROM MENU m 
-                    JOIN recipe r ON m.id_recipe = r.id 
-                    WHERE m.id_user = ? AND m.plannes_date >= CURDATE()
-                    ORDER BY m.plannes_date ASC LIMIT 3"; 
+            // Using the View: Logic is now much simpler
+            $sql = "SELECT plannes_date, meal_type, title, rid 
+                    FROM view_upcoming_meals 
+                    WHERE id_user = ? 
+                    ORDER BY plannes_date ASC 
+                    LIMIT 3"; 
             
             $stmt = $conn->prepare($sql);
             $stmt->bind_param("i", $user_id);
@@ -68,7 +67,7 @@ $user_id = $_SESSION['user_id'];
                     $date = date("D, M j", strtotime($row['plannes_date']));
                     ?>
                     <div class="recipe-card day-column">
-                        <span class="badge"><?php echo $row['meal_type']; ?></span>
+                        <span class="badge"><?php echo htmlspecialchars($row['meal_type']); ?></span>
                         <h4><?php echo $date; ?></h4>
                         <p style="font-weight: bold; color: #ff6b6b;"><?php echo htmlspecialchars($row['title']); ?></p>
                         <a href="recipe_details.php?id=<?php echo $row['rid']; ?>" class="small-link">View Recipe</a>

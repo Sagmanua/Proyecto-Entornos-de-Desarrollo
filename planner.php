@@ -8,13 +8,13 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
-// 1. Handle form submission to save to the MENU table
+// 1. Handle form submission to save to the menu table
 if (isset($_POST['save_menu'])) {
     $date = $_POST['planned_date'];
     $recipe_id = $_POST['id_recipe'];
     $type = $_POST['meal_type'];
     
-    $stmt = $conn->prepare("INSERT INTO MENU (plannes_date, id_recipe, id_user, meal_type) VALUES (?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO menus (plannes_date, id_recipe, id_user, meal_type) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("siis", $date, $recipe_id, $user_id, $type);
     $stmt->execute();
     echo "<p class='success-msg'>Meal added to your plan!</p>";
@@ -47,7 +47,7 @@ if (isset($_POST['save_menu'])) {
                     <label>Select Recipe</label>
                     <select name="id_recipe" required style="width:100%; padding:12px; border-radius:6px; border:1px solid #ddd;">
                         <?php
-                        $recipes = $conn->query("SELECT id, title FROM recipe");
+                        $recipes = $conn->query("SELECT id, title FROM recipes");
                         while($r = $recipes->fetch_assoc()) {
                             echo "<option value='{$r['id']}'>".htmlspecialchars($r['title'])."</option>";
                         }
@@ -62,34 +62,34 @@ if (isset($_POST['save_menu'])) {
     </div>
 
     <div class="planner-grid">
-        <?php
-        $sql = "SELECT m.plannes_date, m.meal_type, r.title, r.id as rid 
-                FROM MENU m 
-                JOIN recipe r ON m.id_recipe = r.id 
-                WHERE m.id_user = ? 
-                ORDER BY m.plannes_date ASC";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $user_id);
-        $stmt->execute();
-        $result = $stmt->get_result();
+    <?php
+    $sql = "SELECT plannes_date, meal_type, title, rid 
+            FROM user_meal_plans 
+            WHERE id_user = ? 
+            ORDER BY plannes_date ASC";
+            
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                $formatted_date = date("l, M j", strtotime($row['plannes_date']));
-                ?>
-                <div class="recipe-card day-column">
-                    <span class="badge"><?php echo $row['meal_type']; ?></span>
-                    <h4><?php echo $formatted_date; ?></h4>
-                    <p><strong><?php echo htmlspecialchars($row['title']); ?></strong></p>
-                    <a href="recipe_details.php?id=<?php echo $row['rid']; ?>" style="font-size: 0.8rem; color: #ff6b6b;">View Recipe</a>
-                </div>
-                <?php
-            }
-        } else {
-            echo "<p style='grid-column: 1/-1; text-align: center;'>Your planner is empty.</p>";
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $formatted_date = date("l, M j", strtotime($row['plannes_date']));
+            ?>
+            <div class="recipe-card day-column">
+                <span class="badge"><?php echo htmlspecialchars($row['meal_type']); ?></span>
+                <h4><?php echo $formatted_date; ?></h4>
+                <p><strong><?php echo htmlspecialchars($row['title']); ?></strong></p>
+                <a href="recipe_details.php?id=<?php echo $row['rid']; ?>" style="font-size: 0.8rem; color: #ff6b6b;">View Recipe</a>
+            </div>
+            <?php
         }
-        ?>
-    </div>
+    } else {
+        echo "<p style='grid-column: 1/-1; text-align: center;'>Your planner is empty.</p>";
+    }
+    ?>
+</div>
 </div>
 
 <?php include "actions/foot.php"; ?>

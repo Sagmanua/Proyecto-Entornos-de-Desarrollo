@@ -41,8 +41,12 @@ if (isset($_GET['delete'])) {
 
 <form method="get">
     <select name="table_name" onchange="this.form.submit()">
-        <option value="USER" <?= $table=='USER'?'selected':'' ?>>Users</option>
-        <option value="ingredient" <?= $table=='ingredient'?'selected':'' ?>>Ingredients</option>
+        <option value="users" <?= $table=='user'?'selected':'' ?>>Users</option>
+        <option value="ingredients" <?= $table=='ingredients'?'selected':'' ?>>Ingredients</option>
+        <option value="menus" <?= $table=='menus'?'selected':'' ?>>Menu</option>
+        <option value="recipes" <?= $table=='recipes'?'selected':'' ?>>recipe</option>
+        <option value="recipe_ingredientes" <?= $table=='recipe_ingredientes'?'selected':'' ?>>recipe_ingredient</option>
+        <option value="recipe_steps" <?= $table=='recipe_steps'?'selected':'' ?>>recipe_steps</option>      
     </select>
 </form>
 
@@ -67,12 +71,20 @@ if (isset($_GET['delete'])) {
 <hr>
 
 <table class="crud-table">
-    <?php $data = $conn->query("SELECT * FROM $table"); while($row = $data->fetch_assoc()): ?>
+    <?php 
+    // 1. Get the name of the Primary Key column for this table
+    $pk_query = $conn->query("SHOW KEYS FROM $table WHERE Key_name = 'PRIMARY'");
+    $pk_row = $pk_query->fetch_assoc();
+    $primary_key = $pk_row['Column_name'] ?? 'id'; // Fallback to 'id' if not found
+
+    $data = $conn->query("SELECT * FROM $table"); 
+    while($row = $data->fetch_assoc()): 
+    ?>
     <tr>
-        <?php foreach($row as $v) echo "<td>$v</td>"; ?>
+        <?php foreach($row as $v) echo "<td>" . htmlspecialchars($v) . "</td>"; ?>
         <td class="actions">
-            <a class="btn-edit" href="?table_name=<?= $table ?>&edit=<?= $row['id'] ?>">Edit</a>
-            <a class="btn-delete" href="?table_name=<?= $table ?>&delete=<?= $row['id'] ?>" onclick="return confirm('Delete?')">Del</a>
+            <a class="btn-edit" href="?table_name=<?= $table ?>&edit=<?= $row[$primary_key] ?>">Edit</a>
+            <a class="btn-delete" href="?table_name=<?= $table ?>&delete=<?= $row[$primary_key] ?>" onclick="return confirm('Delete?')">Del</a>
         </td>
     </tr>
     <?php endwhile; ?>

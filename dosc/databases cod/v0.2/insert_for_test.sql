@@ -1,6 +1,6 @@
 SET FOREIGN_KEY_CHECKS = 0;
 -- 1. USER (10 Users with NULL IDs to trigger AUTO_INCREMENT)
-INSERT INTO USER (id, email, phone, username, password) VALUES 
+INSERT INTO users (id, email, phone, username, password) VALUES 
 (NULL, 'clara_b@demo.com', '555-1001', 'ClaraBakes', '$2b$12$C1l2a3r4a5B6a7k8e9s0H1a2s3h4V5a6l7u8'),
 (NULL, 'david_dev@code.com', '555-1002', 'CodingCook', '$2b$12$D1a2v3i4d5D6e7v8P9a0s1s2w3o4r5d6H7a8'),
 (NULL, 'elena_fit@gym.com', '555-1003', 'ElenaFit', '$2b$12$E1l2e3n4a5F6i7t8V9i0b1e2s3H4a5s6h7L8'),
@@ -12,7 +12,7 @@ INSERT INTO USER (id, email, phone, username, password) VALUES
 (NULL, 'kara_k@kitchen.com', '555-1009', 'KaraKitchen', '$2b$12$K1a2r3a4K5i6t7c8h9e0n1Q2u3e4e5n6H7a8'),
 (NULL, 'leo_l@luxury.com', '555-1010', 'LeoLuxury', '$2b$12$L1e2o3L4u5x6u7r8y9C0h1e2f3H4a5s6h7P8');
 -- 1. USER (IDs 21-30)
-INSERT INTO USER (id, email, phone, username, password) VALUES 
+INSERT INTO users (id, email, phone, username, password) VALUES 
 (NULL, 'will@bakery.com', '555-3001', 'WillWheat', '$2b$12$W1i2l3l4B5a6k7e8r9y0H1a2s3h4V5a6'),
 (NULL, 'xenia@food.com', '555-3002', 'XeniaXo', '$2b$12$X1e2n3i4a5F6o7o8d9H1a2s3h4V5a6l7u8'),
 (NULL, 'yusef@spice.com', '555-3003', 'YusefCooks', '$2b$12$Y1u2s3e4f5S6p7i8c9e0H1a2s3h4V5a6'),
@@ -24,7 +24,7 @@ INSERT INTO USER (id, email, phone, username, password) VALUES
 (NULL, 'eva@eat.com', '555-3009', 'EvaEats', '$2b$12$E1v2a3E4a5t6s7H8a9s0h1v2a3l4u5e6'),
 (NULL, 'finn@fish.com', '555-3010', 'FinnishFish', '$2b$12$F1i2n3n4i5s6h7F8i9s0h1H2a3s4h5V6');
 
-INSERT INTO user (id, email, phone, username, password) VALUES 
+INSERT INTO users (id, email, phone, username, password) VALUES 
 (NULL, 'will@bakery.com', '555-3001', 'WillWheat', '$2b$12$W1i2l3l4B5a6k7e8r9y0H1a2s3h4V5a6'),
 (NULL, 'xenia@food.com', '555-3002', 'XeniaXo', '$2b$12$X1e2n3i4a5F6o7o8d9H1a2s3h4V5a6l7u8'),
 (NULL, 'yusef@spice.com', '555-3003', 'YusefCooks', '$2b$12$Y1u2s3e4f5S6p7i8c9e0H1a2s3h4V5a6'),
@@ -37,7 +37,7 @@ INSERT INTO user (id, email, phone, username, password) VALUES
 (NULL, 'finn@fish.com', '555-3010', 'FinnishFish', '$2b$12$F1i2n3n4i5s6h7F8i9s0h1H2a3s4h5V6');
 
 -- 2. RECIPE (IDs 21-30)
-INSERT INTO recipe (id_user, title, prep_time, description, serving, img) VALUES
+INSERT INTO recipes (id_user, title, prep_time, description, serving, img) VALUES
 (10, 'Spaghetti Carbonara', '20 mins', 'Authentic Roman pasta with egg and guanciale.', 2, 'assets/carbonara.jpg'),
 (2, 'Chocolate Fondant', '15 mins', 'Molten lava cake with a gooey center.', 4, 'assets/fondant.jpg'),
 (4, 'Quinoa Buddha Bowl', '25 mins', 'Healthy bowl with roasted chickpeas and kale.', 1, 'assets/quinoa.jpg'),
@@ -66,7 +66,7 @@ INSERT INTO recipe (id_user, title, prep_time, description, serving, img) VALUES
 
 
 -- 6. MENU
-INSERT INTO MENU (id, plannes_date, id_recipe, id_user, meal_type) VALUES 
+INSERT INTO menus (id, plannes_date, id_recipe, id_user, meal_type) VALUES 
 (NULL, '2025-02-01', 21, 21, 'Breakfast'),
 (NULL, '2025-02-01', 25, 25, 'Dinner'),
 (NULL, '2025-02-02', 22, 22, 'Lunch'),
@@ -86,7 +86,7 @@ INSERT INTO MENU (id, plannes_date, id_recipe, id_user, meal_type) VALUES
 
 
 
-INSERT INTO ingredient (name, calories, type) VALUES
+INSERT INTO ingredients (name, calories, type) VALUES
 ('Spaghetti', 158, 'pasta'),
 ('Egg', 155, 'protein'),
 ('Guanciale', 655, 'meat'),
@@ -165,7 +165,7 @@ SET FOREIGN_KEY_CHECKS=0;
 
 
 -- 8. RECIPE_INGREDIENT (10 Links)
-INSERT INTO recipe_ingredient (id_recipe, id_ingredient, amount, unit, atributo) VALUES
+INSERT INTO recipe_ingredientes (id_recipe, id_ingredient, amount, unit, atributo) VALUES
 -- 1 Spaghetti Carbonara
 (1, 1, 200, 'g', NULL),
 (1, 2, 2, 'pcs', 'egg yolk'),
@@ -250,5 +250,23 @@ INSERT INTO recipe_ingredient (id_recipe, id_ingredient, amount, unit, atributo)
 (20, 27, 400, 'g', 'cod'),
 (20, 26, 6, 'pcs', 'corn');
 
+
+INSERT INTO recipe_steps (recipe_id, step_number, step_description) VALUES
+     (1, 1, 'Cook the pasta until al dente.'),
+     (1, 2, 'In a pan, render guanciale until crispy.'),
+     (1, 3, 'Mix egg and cheese, then combine with the pasta and guanciale.'); 
+
+
+
+INSERT INTO recipe_steps (recipe_id, step_number, step_description) VALUES
+     (2, 1, 'Preheat the oven to 200°C.'),
+     (2, 2, 'Melt the chocolate and butter.'),
+     (2, 3, 'Pour the batter into molds and bake for 12 minutes.');
+
+
+INSERT INTO recipe_steps (recipe_id, step_number, step_description) VALUES
+     (3, 1, 'Cook quinoa and prepare chickpeas.'),
+     (3, 2, 'Chop and roast the vegetables.'),
+     (3, 3, 'Assemble the bowl with all ingredients.');
 
 SET FOREIGN_KEY_CHECKS = 1;

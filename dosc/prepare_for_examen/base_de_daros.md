@@ -390,7 +390,10 @@ GRANT ALL PRIVILEGES ON recipe_app.* TO 'admin_recipe_app'@'localhost';
 FLUSH PRIVILEGES;
 ``` 
 ## Ceate_View.sql
-[Where `user_meal_plans` is used](https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo/blob/main/planner.php#L66-L69)
+[Where user_meal_plans  is used](https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo/blob/main/planner.php#L66-L69)
+[Where view_upcoming_meals  is used](hhttps://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo/blob/main/profile.php#L53-L57)
+[Where VIEW view_recipe_ingredients  is used](https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo/blob/main/recipe_details.php#L17)
+[Where VIEW view_recipe_steps  is used](https://github.com/Sagmanua/Proyecto-Entornos-de-Desarrollo/blob/main/recipe_details.phpL29)
 
 ```
 CREATE VIEW user_meal_plans AS
@@ -403,7 +406,6 @@ SELECT
 FROM menus m 
 JOIN recipes r ON m.id_recipe = r.id;
 
-Profile.php
 CREATE VIEW view_upcoming_meals AS
 SELECT 
     m.id_user,

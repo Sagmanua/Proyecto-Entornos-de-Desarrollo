@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="658" height="766" viewBox="0 0 658 766">
+
+  <defs>
+    <style>
+      text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 12px; fill: #111827; }
+      .shape-rect { fill: #ffffff; stroke: #9ca3af; stroke-width: 1; }
+      .shape-entity { fill: #ffffff; stroke: #111827; stroke-width: 2; }
+      .shape-circle { fill: #ffffff; stroke: #9ca3af; stroke-width: 1; }
+      .shape-pill { fill: #ffffff; stroke: #9ca3af; stroke-width: 1; }
+      .shape-db { fill: #ffffff; stroke: #9ca3af; stroke-width: 1; }
+      .conn { stroke: #111827; stroke-width: 2; fill: none; }
+    </style>
+    <marker id="arrow-end" markerWidth="10" markerHeight="7" refX="10" refY="3.5"
+            orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#111827"/>
+    </marker>
+    <marker id="arrow-start" markerWidth="10" markerHeight="7" refX="0" refY="3.5"
+            orient="auto" markerUnits="strokeWidth">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#111827"/>
+    </marker>
+  </defs>
+        
+<rect class="shape-entity" x="347" y="40" width="160" height="188" />
+<line x1="347" y1="71" x2="507" y2="71" stroke="#e5e7eb" stroke-width="1"/>
+<text x="427" y="60" text-anchor="middle">users</text>
+<text x="398.90625" y="91.5">id</text>
+<text x="398.90625" y="116.5">email</text>
+<text x="398.90625" y="141.5">phone</text>
+<text x="398.90625" y="166.5">username</text>
+<text x="398.90625" y="191.5">email</text>
+<rect class="shape-entity" x="244" y="254" width="160" height="238" />
+<line x1="244" y1="285" x2="404" y2="285" stroke="#e5e7eb" stroke-width="1"/>
+<text x="324" y="274" text-anchor="middle">recipes</text>
+<text x="292.078125" y="305.5">id</text>
+<text x="292.078125" y="330.5">id_user</text>
+<text x="292.078125" y="355.5">title</text>
+<text x="292.078125" y="380.5">prep_time</text>
+<text x="292.078125" y="405.5">description</text>
+<text x="292.078125" y="430.5">img</text>
+<text x="292.078125" y="455.5">serving</text>
+<rect class="shape-entity" x="415" y="563" width="160" height="163" />
+<line x1="415" y1="594" x2="575" y2="594" stroke="#e5e7eb" stroke-width="1"/>
+<text x="495" y="583" text-anchor="middle">ingredientes</text>
+<text x="473.3125" y="614.5">id</text>
+<text x="473.3125" y="639.5">name</text>
+<text x="473.3125" y="664.5">calories</text>
+<text x="473.3125" y="689.5">type</text>
+<rect class="shape-entity" x="45" y="120" width="160" height="188" />
+<line x1="45" y1="151" x2="205" y2="151" stroke="#e5e7eb" stroke-width="1"/>
+<text x="125" y="140" text-anchor="middle">menus</text>
+<text x="87.34375" y="171.5">id</text>
+<text x="87.34375" y="196.5">plannes_date</text>
+<text x="87.34375" y="221.5">id_recipe</text>
+<text x="87.34375" y="246.5">id_user</text>
+<text x="87.34375" y="271.5">meal_ytpe</text>
+<rect class="shape-entity" x="458" y="309" width="160" height="213" />
+<line x1="458" y1="340" x2="618" y2="340" stroke="#e5e7eb" stroke-width="1"/>
+<text x="538" y="329" text-anchor="middle">recipe_ingredientes</text>
+<text x="501.390625" y="360.5">id</text>
+<text x="501.390625" y="385.5">id_recipe</text>
+<text x="501.390625" y="410.5">id ingredient</text>
+<text x="501.390625" y="435.5">amount</text>
+<text x="501.390625" y="460.5">unit</text>
+<text x="501.390625" y="485.5">atributo</text>
+<rect class="shape-entity" x="40" y="493" width="160" height="163" />
+<line x1="40" y1="524" x2="200" y2="524" stroke="#e5e7eb" stroke-width="1"/>
+<text x="120" y="513" text-anchor="middle">recipe_steps</text>
+<text x="73.203125" y="544.5">id</text>
+<text x="73.203125" y="569.5">recipe_id</text>
+<text x="73.203125" y="594.5">step_number</text>
+<text x="73.203125" y="619.5">step_description</text>
+<path class="conn" d="M 378.90625 91.25757575757575 H 182.65625 V 238.74242424242425" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 378.90625 91.25757575757575 H 182.65625 V 238.74242424242425" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 378.90625 91.25757575757575 H 182.65625 V 238.74242424242425" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 378.90625 91.25757575757575 L 182.65625 238.74242424242425" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 383.63428347280336 92.5 L 371.17821652719664 321.5" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 272.078125 297.27557755775575 L 182.65625 221.72442244224425" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 530.5772824754902 605.5 L 487.50084252450984 411.5" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 375.90625 303.8812745230686 L 481.390625 354.1187254769314" marker-end="url(#arrow-end)" />
+<path class="conn" d="M 275.08446652719664 306.5 L 183.77490847280336 535.5" marker-end="url(#arrow-end)" />
+</svg>

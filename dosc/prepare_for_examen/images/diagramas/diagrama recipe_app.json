@@ -1,0 +1,322 @@
+{
+  "formas": [
+    {
+      "id": "forma-1",
+      "tipo": "entity",
+      "left": "452px",
+      "top": "120px",
+      "width": "",
+      "height": "",
+      "entityName": "users",
+      "properties": [
+        {
+          "id": "prop-1",
+          "name": "id"
+        },
+        {
+          "id": "prop-2",
+          "name": "email"
+        },
+        {
+          "id": "prop-3",
+          "name": "phone"
+        },
+        {
+          "id": "prop-4",
+          "name": "username"
+        },
+        {
+          "id": "prop-5",
+          "name": "email"
+        }
+      ]
+    },
+    {
+      "id": "forma-2",
+      "tipo": "entity",
+      "left": "349px",
+      "top": "334px",
+      "width": "",
+      "height": "",
+      "entityName": "recipes",
+      "properties": [
+        {
+          "id": "prop-6",
+          "name": "id"
+        },
+        {
+          "id": "prop-7",
+          "name": "id_user"
+        },
+        {
+          "id": "prop-8",
+          "name": "title"
+        },
+        {
+          "id": "prop-9",
+          "name": "prep_time"
+        },
+        {
+          "id": "prop-10",
+          "name": "description"
+        },
+        {
+          "id": "prop-11",
+          "name": "img"
+        },
+        {
+          "id": "prop-12",
+          "name": "serving"
+        }
+      ]
+    },
+    {
+      "id": "forma-3",
+      "tipo": "entity",
+      "left": "520px",
+      "top": "643px",
+      "width": "",
+      "height": "",
+      "entityName": "ingredientes",
+      "properties": [
+        {
+          "id": "prop-13",
+          "name": "id"
+        },
+        {
+          "id": "prop-14",
+          "name": "name"
+        },
+        {
+          "id": "prop-15",
+          "name": "calories"
+        },
+        {
+          "id": "prop-16",
+          "name": "type"
+        }
+      ]
+    },
+    {
+      "id": "forma-4",
+      "tipo": "entity",
+      "left": "150px",
+      "top": "200px",
+      "width": "",
+      "height": "",
+      "entityName": "menus",
+      "properties": [
+        {
+          "id": "prop-17",
+          "name": "id"
+        },
+        {
+          "id": "prop-18",
+          "name": "plannes_date"
+        },
+        {
+          "id": "prop-19",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-20",
+          "name": "id_user"
+        },
+        {
+          "id": "prop-21",
+          "name": "meal_ytpe"
+        }
+      ]
+    },
+    {
+      "id": "forma-5",
+      "tipo": "entity",
+      "left": "563px",
+      "top": "389px",
+      "width": "",
+      "height": "",
+      "entityName": "recipe_ingredientes",
+      "properties": [
+        {
+          "id": "prop-22",
+          "name": "id"
+        },
+        {
+          "id": "prop-23",
+          "name": "id_recipe"
+        },
+        {
+          "id": "prop-24",
+          "name": "id ingredient"
+        },
+        {
+          "id": "prop-25",
+          "name": "amount"
+        },
+        {
+          "id": "prop-26",
+          "name": "unit"
+        },
+        {
+          "id": "prop-27",
+          "name": "atributo"
+        }
+      ]
+    },
+    {
+      "id": "forma-6",
+      "tipo": "entity",
+      "left": "145px",
+      "top": "573px",
+      "width": "",
+      "height": "",
+      "entityName": "recipe_steps",
+      "properties": [
+        {
+          "id": "prop-28",
+          "name": "id"
+        },
+        {
+          "id": "prop-29",
+          "name": "recipe_id"
+        },
+        {
+          "id": "prop-30",
+          "name": "step_number"
+        },
+        {
+          "id": "prop-31",
+          "name": "step_description"
+        }
+      ]
+    }
+  ],
+  "flechas": [
+    {
+      "desde": {
+        "shapeId": "forma-1",
+        "propId": "prop-1",
+        "side": "left"
+      },
+      "hasta": {
+        "shapeId": "forma-4",
+        "propId": "prop-20",
+        "side": "right"
+      },
+      "tipo": "simple",
+      "estilo": "ortho"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-1",
+        "propId": "prop-1",
+        "side": "left"
+      },
+      "hasta": {
+        "shapeId": "forma-4",
+        "propId": "prop-20",
+        "side": "right"
+      },
+      "tipo": "simple",
+      "estilo": "ortho"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-1",
+        "propId": "prop-1",
+        "side": "left"
+      },
+      "hasta": {
+        "shapeId": "forma-4",
+        "propId": "prop-20",
+        "side": "right"
+      },
+      "tipo": "simple",
+      "estilo": "ortho"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-1",
+        "propId": "prop-1",
+        "side": "left"
+      },
+      "hasta": {
+        "shapeId": "forma-4",
+        "propId": "prop-20",
+        "side": "right"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-1",
+        "propId": "prop-1",
+        "side": "left"
+      },
+      "hasta": {
+        "shapeId": "forma-2",
+        "propId": "prop-7",
+        "side": "right"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-2",
+        "propId": "prop-6",
+        "side": "left"
+      },
+      "hasta": {
+        "shapeId": "forma-4",
+        "propId": "prop-19",
+        "side": "right"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-3",
+        "propId": "prop-13",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-5",
+        "propId": "prop-24",
+        "side": "left"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-2",
+        "propId": "prop-6",
+        "side": "right"
+      },
+      "hasta": {
+        "shapeId": "forma-5",
+        "propId": "prop-22",
+        "side": "left"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    },
+    {
+      "desde": {
+        "shapeId": "forma-2",
+        "propId": "prop-6",
+        "side": "left"
+      },
+      "hasta": {
+        "shapeId": "forma-6",
+        "propId": "prop-28",
+        "side": "right"
+      },
+      "tipo": "simple",
+      "estilo": "straight"
+    }
+  ]
+}

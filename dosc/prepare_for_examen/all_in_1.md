@@ -12,10 +12,10 @@
 
 # Codigo Completo
 Project\  
-├─ explicacion.md  
-├─ Crete Vies.sql
-├─ datebase.sql
-├─ insert_datos.sql
+├─ explicacion.md   
+├─ Crete Vies.sql  
+├─ datebase.sql  
+├─ insert_datos.sql  
 └─ 
 ##
 ```

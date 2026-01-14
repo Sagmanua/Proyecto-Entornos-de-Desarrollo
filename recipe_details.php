@@ -14,7 +14,6 @@ if ($recipe) {
     echo "<h3>Ingredients:</h3>";
     echo "<ul>";
     
-    // 1. Using the Ingredients View
     $sql_ing = "SELECT name, amount, unit FROM view_recipe_ingredients WHERE id_recipe = ?";
     $stmt_ing = $conn->prepare($sql_ing);
     $stmt_ing->bind_param("i", $recipe_id);
@@ -26,7 +25,6 @@ if ($recipe) {
     }
     echo "</ul>";
     
-    // 2. Using the Instructions View
     echo "<h3>Instructions:</h3>";
     $sql_steps = "SELECT step_number, step_description FROM view_recipe_steps WHERE recipe_id = ? ORDER BY step_number ASC";
     

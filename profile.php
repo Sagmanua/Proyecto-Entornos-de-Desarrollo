@@ -50,7 +50,6 @@ $user_id = $_SESSION['user_id'];
         <h3>My Upcoming Meals</h3>
         <div class="planner-grid">
             <?php
-            // Using the View: Logic is now much simpler
             $sql = "SELECT plannes_date, meal_type, title, rid 
                     FROM view_upcoming_meals 
                     WHERE id_user = ? 

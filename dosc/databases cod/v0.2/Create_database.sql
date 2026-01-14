@@ -51,19 +51,17 @@ CREATE TABLE recipe_ingredientes (
     amount DECIMAL(10, 2),
     unit VARCHAR(20),
     atributo VARCHAR(50),
-    -- Foreign Keys
     FOREIGN KEY (id_recipe) REFERENCES recipes(id) ON DELETE CASCADE,
     FOREIGN KEY (id_ingredient) REFERENCES ingredients(id) ON DELETE CASCADE,
-    -- Unique constraint ensures you don't add the same ingredient to a recipe twice
     UNIQUE KEY unique_recipe_ingredient (id_recipe, id_ingredient)
 );
 -- 8. RECIPErecipe_step (Many-to-Many Bridge Table)
 
 CREATE TABLE recipe_steps (
          id INT AUTO_INCREMENT PRIMARY KEY,
-         recipe_id INT,                  -- Foreign key linking to the recipe table
-         step_number INT,                -- Step number (1, 2, 3, etc.)
-         step_description TEXT,          -- Description of the step
+         recipe_id INT,                  
+         step_number INT,                
+         step_description TEXT,          
          FOREIGN KEY (recipe_id) REFERENCES recipes (id) ON DELETE CASCADE
      );
 
@@ -72,24 +70,3 @@ ALTER TABLE recipe_ingredientes
     ADD UNIQUE KEY (id_recipe, id_ingredient);
 
 
--- 1. Create the users with the credentials from your PHP $users and $pass
-CREATE USER 'admin_recipe_app'@'localhost' 
-IDENTIFIED BY 'Login_system123$';
-
--- 2. Initial usage grant
-GRANT USAGE ON *.* TO 'admin_recipe_app'@'localhost';
-
--- 3. Set resource limits (keeping your original requirements)
-ALTER USER 'admin_recipe_app'@'localhost' 
-REQUIRE NONE 
-WITH MAX_QUERIES_PER_HOUR 0 
-MAX_CONNECTIONS_PER_HOUR 0 
-MAX_UPDATES_PER_HOUR 0 
-MAX_USER_CONNECTIONS 0;
-
--- 4. Grant privileges specifically to the 'recipe_app' database
--- This matches your PHP $db variable
-GRANT ALL PRIVILEGES ON recipe_app.* TO 'admin_recipe_app'@'localhost';
-
--- 5. Apply changes
-FLUSH PRIVILEGES;

@@ -71,20 +71,12 @@ if (isset($_GET['delete'])) {
 <hr>
 
 <table class="crud-table">
-    <?php 
-    // 1. Get the name of the Primary Key column for this table
-    $pk_query = $conn->query("SHOW KEYS FROM $table WHERE Key_name = 'PRIMARY'");
-    $pk_row = $pk_query->fetch_assoc();
-    $primary_key = $pk_row['Column_name'] ?? 'id'; // Fallback to 'id' if not found
-
-    $data = $conn->query("SELECT * FROM $table"); 
-    while($row = $data->fetch_assoc()): 
-    ?>
+    <?php $data = $conn->query("SELECT * FROM $table"); while($row = $data->fetch_assoc()): ?>
     <tr>
-        <?php foreach($row as $v) echo "<td>" . htmlspecialchars($v) . "</td>"; ?>
+        <?php foreach($row as $v) echo "<td>$v</td>"; ?>
         <td class="actions">
-            <a class="btn-edit" href="?table_name=<?= $table ?>&edit=<?= $row[$primary_key] ?>">Edit</a>
-            <a class="btn-delete" href="?table_name=<?= $table ?>&delete=<?= $row[$primary_key] ?>" onclick="return confirm('Delete?')">Del</a>
+            <a class="btn-edit" href="?table_name=<?= $table ?>&edit=<?= $row['id'] ?>">Edit</a>
+            <a class="btn-delete" href="?table_name=<?= $table ?>&delete=<?= $row['id'] ?>" onclick="return confirm('Delete?')">Del</a>
         </td>
     </tr>
     <?php endwhile; ?>

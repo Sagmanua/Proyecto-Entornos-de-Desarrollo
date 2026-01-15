@@ -8,11 +8,6 @@ En este exame voy a exlicar mi base de datos de la mi proyecto App de Recetas y 
 * CRUD en las codigo
 
 
-
-
-
-
-
 # 2.-Desarrollo técnico correcto y preciso
 ## images of data bases (2 diferte formas de muestra de la ER `svg` y `png`)
 ![diagrama](https://raw.githubusercontent.com/Sagmanua/Proyecto-Entornos-de-Desarrollo/main/dosc/prepare_for_examen/images/diagramas/recipe_app.png)
@@ -348,7 +343,7 @@ if ($id) { // Update existing
     $sql = "INSERT INTO $table ($cols) VALUES ($vals)";
     }
 ```
-### hago una `DESCRIBE` de la tabla cuando admin elige na de los tablas en 
+### hago una `DESCRIBE` de la tabla cuando admin elige opcion de los tablas hago este cofigo que describe la tabla que elige y luego mustra en la tabla  
 ```
 $res = $conn->query("DESCRIBE $table");
 while($col = $res->fetch_assoc()): 
@@ -470,12 +465,6 @@ INSERT INTO recipes (id_user, title, prep_time, description, serving, img) VALUE
 (4, 'Quinoa Buddha Bowl', '25 mins', 'Healthy bowl with roasted chickpeas and kale.', 1, 'assets/quinoa.jpg'),
 ...
 
-
-
-
-
-
-
 -- 6. MENU
 INSERT INTO menus (id, plannes_date, id_recipe, id_user, meal_type) VALUES 
 (NULL, '2025-02-01', 21, 21, 'Breakfast'),
@@ -488,14 +477,6 @@ INSERT INTO menus (id, plannes_date, id_recipe, id_user, meal_type) VALUES
 (NULL, '2025-02-04', 24, 24, 'Dinner'),
 (NULL, '2025-02-05', 30, 30, 'Lunch'),
 (NULL, '2025-02-05', 29, 29, 'Dessert');
-
-
-
-
-
-
-
-
 
 INSERT INTO ingredients (name, calories, type) VALUES
 ('Spaghetti', 158, 'pasta'),
@@ -515,13 +496,6 @@ INSERT INTO ingredients (name, calories, type) VALUES
 ('Olive Oil', 884, 'fat'),
 
 ...
-
-
-
-
-
-
-
 
 -- 8. RECIPE_INGREDIENT 
 INSERT INTO recipe_ingredientes (id_recipe, id_ingredient, amount, unit, atributo) VALUES
@@ -578,7 +552,6 @@ GRANT ALL PRIVILEGES ON recipe_app.* TO 'admin_recipe_app'@'localhost';
 FLUSH PRIVILEGES;
 ``` 
 ## Ceate_View.sql
-
 
 ```
 CREATE VIEW user_meal_plans AS

@@ -8,10 +8,19 @@ La aplicación permite a los usuarios registrarse, iniciar sesión, hace plane d
 
 # 2.-Desarrollo técnico correcto y preciso
 
-![diagrama](https://raw.githubusercontent.com/Sagmanua/Proyecto-Entornos-de-Desarrollo/main/dosc/Diagramas/len/diagrama%20(1).svg)
 
 
-este Diagram mustra infomacion de la 
+![diagrama](https://raw.githubusercontent.com/Sagmanua/Proyecto-Entornos-de-Desarrollo/main/dosc/prepare_for_examen/images/diagramas/diagrama_paginas.png)
+
+
+![diagrama](https://raw.githubusercontent.com/Sagmanua/Proyecto-Entornos-de-Desarrollo/main/dosc/prepare_for_examen/images/diagramas/diagrama_paginas.svg)
+
+este Diagram mustra infomacion de como coenctas la paginas de en mi pagina 
+* Index es la main pagina y conectaaa todo 
+* Profle es la pagina que contiene informacion de la user 
+* Update login y register usa para trabajar con uasrio
+* recipe_details contiene informcaion mas clara de losraipes
+* planner es creado para que usario puede crear comida a la semana (o mas )
 
 
 
@@ -343,15 +352,388 @@ En este parte creo tabla que muestra informacion delas tablas  tambien tiene but
     <?php endwhile; ?>
 </table>
 ```
+## CSS style.css
+### 1. Reset General y Estilos Base
+* Elimina márgenes y rellenos por defecto
+* Define una fuente común para todo el sitio
+* Establece colores base y espaciado legible
+```
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+body {
+    background-color: #f9fbf9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+```
+
+### 2. Barra de Navegación
+* Creo una barra horizontal 
+* Uso flexbox para hago una elemntos a lina  y separo elementos
+* Añado bordes 
+```
+nav {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ff6b6b;
+    font-weight: bold;
+    margin-right: 15px;
+}
+```
+### 3. Cuadrícula y Tarjetas de Recetas
+
+* Muestro las recetas en una cuadrícula adaptable
+* Las tarjetas tienen sombra, bordes  y animación
+* Las imágenes que adaptptado bor el box `div` de la pagina  
+```
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.recipe-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0; 
+    width: 100%;
+    transition: transform 0.2s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+.recipe-image {
+    width: 100%; 
+    height: 200px;         
+    object-fit: cover;     
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: block;
+    flex-shrink: 0;
+}
+
+.recipe-card h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #2d3436;
+    word-wrap: break-word;
+}
+
+.recipe-card a.btn {
+    margin-top: auto;
+    align-self: flex-start;
+    color: #fff;
+    background: #ff6b6b;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+```
+### 4. Formularios (Login, Registro, Actualizar)
+
+* Centro los formularios en tarjetas
+* Estilizo campos y botones para mejor entendible que es esto  
+* Incluye efecto hover en botones para hago mas mejor estilo de la pagina  
+```
+form {
+    background: #fff;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ff6b6b;
+}
+
+input[type="text"], 
+input[type="password"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #ff6b6b;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #ee5253;
+}
+```
+### 5. Página de Detalles de Receta
+
+* Resalta el título con una línea de color
+* Da estilo a listas e instrucciones 
+* Facilita la lectura del contenido 
+```
+.recipe-detail-header {
+    border-bottom: 3px solid #ff6b6b;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-position: inside;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.instructions-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #ff6b6b;
+}
+
+
+```
+### 6. Perfil de Usuario
+
+* Diseño en dos columnas (perfil y planificador)
+* Tarjeta de perfil con avatar que adaptado por primero letra de `username` y botones de acción
+```
+/* Container as flex row */
+.profile-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+}
+
+/* Left column */
+.profile-left {
+    flex: 1 1 300px; /* grow, shrink, base width */
+    max-width: 400px;
+}
+
+/* Right column */
+.profile-right {
+    flex: 2 1 400px; /* bigger column */
+    max-width: 800px;
+}
+
+/* Profile card */
+.profile-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Avatar circle */
+.avatar-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #ff6b6b;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 15px;
+}
+
+/* Profile actions */
+.profile-actions {
+   display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.profile-actions a {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-secondary { background-color: #6c757d; color: #fff; }
+.btn-secondary:hover { background-color: #5a6268; }
+.btn-danger { background-color: #ff6b6b; color: #fff; }
+.btn-danger:hover { background-color: #e55b5b; }
+
+/* Planner grid (right column) */
+.planner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.recipe-card.day-column {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.recipe-card .badge {
+    background-color: #ff6b6b;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+```
+
+###  7. Estilos del Planificador de Comidas 
+
+* Diseño en cuadrícula para organizar días/comidas
+* Usao etiquetas (badges) para identificar elementos 
+* Enlaces pequeños para acciones secundarias
+```
+.planner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    width: 100%;
+}
+
+.badge {
+    display: inline-block;
+    background: #ffeaa7;
+    color: #d35400;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    width: fit-content;
+}
+
+.small-link {
+    font-size: 0.8rem;
+    color: #ff6b6b;
+    text-decoration: none;
+    font-weight: bold;
+}
+```
+
+### 8. Tabla CRUD y Administración
+/** Tabla estilizada con filas alternadas 
+* Resalta filas al pasar el cursor
+* Botones de acción agrupados
+```
+.crud-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin: 30px auto;
+}
+
+.crud-table th {
+    background: #ff6b6b;
+    color: #fff;
+    text-align: left;
+    padding: 14px;
+    font-weight: bold;
+}
+
+.crud-table td {
+    padding: 14px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.crud-table tr:nth-child(even) { background-color: #fafafa; }
+.crud-table tr:hover { background-color: #fff1f1; }
+
+.crud-table .actions {
+    display: flex;
+    gap: 8px;
+}
+```
+9. Variantes de Botones Compartidos
+* Estilos reutilizables para botones comunes.
+* Colores consistentes para acciones.
+* Efectos hover uniformes..
+```
+.btn-secondary { background: #eee; color: #333; text-align: center; }
+.btn-danger { background: #ff6b6b; color: white; text-align: center; }
+
+.btn-edit { background: #eee; color: #333; }
+.btn-delete { background: #ff6b6b; color: #fff; }
+
+.btn-secondary:hover, .btn-edit:hover { background: #ddd; }
+.btn-danger:hover, .btn-delete:hover { background: #ee5253; }
+```
 # 4.-Cierre/Conclusión enlazando con la unidad
+En este parte de la paracita uso mis conocimientos de HTML y CSS para crear una página web ordenada, clara y fácil de usar.
+
+Con HTML que guarda en la Php hago una estructura toda la información qeu contiende : menús, recetas, formularios y perfil de usuario. Gracias a etiquetas como <div>, <form>, <input> y <ul>, la página es fácil de leer y de navegar.
+
+Con CSS se mejora la apariencia:
+* uso para cambia colores y botones para que todo sea visualmente atractivo.
+* creo tarjetas para las recetas y planificaciones que organizan la información de manera clara.
+* aplico Flexbox y Grid para que la web sea responsiva 
+* estilizo formularios y botones para que sean fáciles de usar y consistentes en toda la web.
+
+
+
+
 # Codigo Completo
-Project\  
-├─ explicacion.md   
-├─ Crete Vies.sql  
-├─ datebase.sql  
-├─ insert_datos.sql  
-└─ 
+
 ## head.php
 ```
 <?php
@@ -986,7 +1368,6 @@ ul {
     justify-content: center;
     align-items: flex-start;
     padding: 50px 20px;
-    flex-wrap: wrap; /* for mobile */
     background-color: #f5f5f5;
 }
 

@@ -1,8 +1,7 @@
 # 1.-Indroduccion brece y contexalizacion
-creada con PHP, MySQL, HTML y CSS.
+mi aplicación web dinámica diseñada para la gestión y planificación de comida semanales
+En este parte voy a exlicar mi estilo de la mi proyecto App de Recetas y Planificador de Comidas. Explcacion de ste parte es crasion de laa  Front uso HTML CSS 
 La aplicación permite a los usuarios registrarse, iniciar sesión, hace plane de la comida por semana (o mas). En este parte voy a explicar HTML (que contiene el php) Css 
-
-
 
 
 
@@ -21,8 +20,6 @@ este Diagram mustra infomacion de como coenctas la paginas de en mi pagina
 * Update login y register usa para trabajar con uasrio
 * recipe_details contiene informcaion mas clara de losraipes
 * planner es creado para que usario puede crear comida a la semana (o mas )
-
-
 
 
 ## head.php
@@ -68,7 +65,7 @@ En este archivo similar de la `head.php` pero contiene la cierro de todos los ar
 </html>
 ```
 ## index.php
-Es la archivo que es la pagina mian de la mi pagina. Agui mustra la informacion corto de la recipes
+Es la archivo que es la pagina mian de la mi pagina. Agui mustra la informacion corto de la recipes 
 ```
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
@@ -80,7 +77,7 @@ if ($result->num_rows > 0) {
             echo '<a href="recipe_details.php?id=' . $row['id'] . '" class="btn">View Full Recipe</a>';
 ```
 ## login.php
-En este pagina puede hace logic usa facil structura de la `form` para gurda informacion de la usario y luego envio a la php para procesar 
+En este pagina puede hace login. Usa facil structura de la `form` con `input` para gurda informacion de la usario y luego envio a la php para procesar 
 ```
 <?php require_once __DIR__ . '/inc/login_user.php'; ?>  
 <form method="POST">
@@ -92,7 +89,7 @@ En este pagina puede hace logic usa facil structura de la `form` para gurda info
 </form>
 ```
 ## register.php
-En este pagina puede hace registra la usario para gurda informacion como em `login.php` usa facil structura de la `form` para gurda informacion de la usario y luego envio a la php para procesar 
+En este pagina puede hace registra la usario para gurda informacion como em `login.php` usa facil structura de la `form` ycon `input ` para gurda informacion de la usario y luego envio a la php para procesar 
 ```
 <?php require_once __DIR__ . '/inc/create_user.php'; ?>  
 <form method="POST">
@@ -108,7 +105,7 @@ En este pagina puede hace registra la usario para gurda informacion como em `log
 </form>
 ```
 ## update.php
-En este pagina puede hace Upadate la usario para gurda informacion como em `login.php` usa facil structura de la `form` para gurda informacion de la usario y luego envio a la php para procesar 
+En este pagina puede hace Upadate la usario para gurda informacion como em `login.php` usa facil structura de la `form` con `input` para gurda informacion de la usario y luego envio a la php para procesar 
 ```
 
 <?php
@@ -147,6 +144,7 @@ En este codigo mustra informacion del la todos la recipe contiene
 * img
 * link a recipe_details 
 
+
 ```
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
@@ -158,8 +156,14 @@ if ($result->num_rows > 0) {
             echo '<a href="recipe_details.php?id=' . $row['id'] . '" class="btn">View Full Recipe</a>';
 ```
 ## planner.php
-### parte 1
+
+### Inicio
 En este parte de la pagina usario puede crear su propia planner 
+Contiene 3 partes de elgion :
+* date
+* type
+* Recipe
+
 ```
 <div class="container">
     <div class="menu-header">
@@ -170,7 +174,9 @@ En este parte de la pagina usario puede crear su propia planner
     <div class="recipe-card" style="margin-bottom: 30px;">
         <form method="POST" style="box-shadow: none; margin: 0; max-width: 100%;">
 ```
-Contiene 3 partes de elgioc 1 date  en la style 
+### Parte 1
+#### opcion 1
+En este parte puede eligr la date
 crea columnas automáticas que:
 * tienen mínimo 200px
 * se expanden hasta ocupar el espacio disponible (1fr)
@@ -183,7 +189,12 @@ crea columnas automáticas que:
     </div>
 
 ```
-En 2 `select` creo una lista en que puede elige opcion 
+#### opcion 2
+En 2 `select` creo una lista en que puede elige opcion:
+* Breakfast
+* Lunch
+* Dinner
+* Snack
 ```
 <div>
     <label>Meal Type</label>
@@ -195,7 +206,8 @@ En 2 `select` creo una lista en que puede elige opcion
     </select>
 </div>
 ```
-Agui como en 2 creo un lista de la select 
+#### opcion 3
+En este parte elige recipe creo una lista que gurda en la bases de datos 
 ```
 <div>
 <label>Select Recipe</label>
@@ -209,7 +221,8 @@ Agui como en 2 creo un lista de la select
 </select>
 </div>
 ```
-Creo una botton para gurda informacio
+#### Creasion de booton
+Creo una botton para gurda en style declara que esta ultima 
 ```
 <div style="display: flex; align-items: flex-end;">
     <button name="save_menu">Add to Plan</button>
@@ -218,19 +231,10 @@ Creo una botton para gurda informacio
 </form>
 </div>
 ```
-### parte 2 
-en este parte hago una de mustra de todos los  `meal` que creo 
-```
-<div class="recipe-card day-column">
-    <span class="badge"><?php echo htmlspecialchars($row['meal_type']); ?></span>
-    <h4><?php echo $formatted_date; ?></h4>
-    <p><strong><?php echo htmlspecialchars($row['title']); ?></strong></p>
-    <a href="recipe_details.php?id=<?php echo $row['rid']; ?>" style="font-size: 0.8rem; color: #ff6b6b;">View Recipe</a>
-</div>
-```
+
 ## profile.php
 ### Parte 1 
-Agui de muestra todo informacio de la usarioque contiene en la Base de Datos
+Agui de muestra todo informacio de la usarioque contiene en la Base de Datos en una lista simple 
 
 ```
 <div class="profile-info">
@@ -251,7 +255,7 @@ Agui de muestra todo informacio de la usarioque contiene en la Base de Datos
 </div>
 ```
 ### Parte 2
-creo unas botos para mover de la pagina 
+creo unas botones para mover de la pagina otros paginas 
 ```
 <div class="profile-actions">
     <a href="planner.php" class="btn-secondary">Open Full Planner</a>
@@ -262,9 +266,9 @@ creo unas botos para mover de la pagina
 </div>
 ```
 ## Parte 3
-En este parte creo los ficl de muestra la informmacion de la Plannes de la comida en la pagina usario 
+En este parte creo los facil de muestra la informmacion de la Plannes de la comida en la pagina usario 
 Uso style que uso en la todos da la mi pagina 
-Si no tiene nado en la plane mustra una link a `planner.php`
+Si no tiene nado en la plane mustra una link a `planner.php` y mustra mensage que no tiene nado 
 ```
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
@@ -283,7 +287,7 @@ if ($result->num_rows > 0) {
 ```
 ## planner.php
 Agui muestra informacion de la Recipe u como hago `instructions-box`
-(borro la php para leer mas bueno)
+(borro la php para leer mas bueno puedes encontrar en la Codigo completo )
 ```
  echo "<h3>Ingredients:</h3>";
     echo "<ul>";
@@ -667,7 +671,7 @@ ul {
 ```
 
 ### 8. Tabla CRUD y Administración
-/** Tabla estilizada con filas alternadas 
+* Tabla estilizada con filas alternadas 
 * Resalta filas al pasar el cursor
 * Botones de acción agrupados
 ```
@@ -704,7 +708,7 @@ ul {
     gap: 8px;
 }
 ```
-9. Variantes de Botones Compartidos
+### 9. Variantes de Botones Compartidos
 * Estilos reutilizables para botones comunes.
 * Colores consistentes para acciones.
 * Efectos hover uniformes..
@@ -719,9 +723,15 @@ ul {
 .btn-danger:hover, .btn-delete:hover { background: #ee5253; }
 ```
 # 4.-Cierre/Conclusión enlazando con la unidad
-En este parte de la paracita uso mis conocimientos de HTML y CSS para crear una página web ordenada, clara y fácil de usar.
+En este parte de la paracita uso mis conocimientos de HTML y CSS para crear Front de la mi aplicaion web dinamica diseña para gestin y planificacion de comida
 
-Con HTML que guarda en la Php hago una estructura toda la información qeu contiende : menús, recetas, formularios y perfil de usuario. Gracias a etiquetas como <div>, <form>, <input> y <ul>, la página es fácil de leer y de navegar.
+Con HTML que guarda en la Php hago una estructura toda la información que contiende mi pagina
+* index que es la pagina raiz que contine patallitas de la ricepe 
+* profile informacion de usario con una pantallitas 
+* Update delete crear que uso trabajar con datos de usario formularios 
+* recipe detallas que tiene imagenes y listas 
+* Admin panel que contiene tabla 
+* Planer que contiene pantallitas y opcion de selecion 
 
 Con CSS se mejora la apariencia:
 * uso para cambia colores y botones para que todo sea visualmente atractivo.

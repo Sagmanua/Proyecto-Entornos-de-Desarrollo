@@ -19,8 +19,14 @@ if (isset($_POST['save_menu'])) { // 1. Проверяем, была ли наж
 
 
 
+Al primero conecta a `head.php` que contiene la `conecion_bd.php` 
+```
+include "actions/head.php"; 
+```
 
-2. Безопасное выполнение (Prepared Statement)
+
+
+2. Безопасное выполнение ((Prepared Statement)
 
 
 $stmt = $conn->prepare($sql);
